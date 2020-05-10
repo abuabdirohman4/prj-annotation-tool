@@ -21,8 +21,8 @@ def get_surah(surah_number):
     def pattern_to_array(row):
         return row['pattern'].split(',')
 
-    patterns = list(map(pattern_to_array, list(mongo.db.patterns.find())))
-    surah = list(mongo.db.quran.find({'SURAH_NUMBER' : str(surah_number)}))
+    patterns = list(map(pattern_to_array, list(mongo.db.mongo_patterns.find())))
+    surah = list(mongo.db.mongo_quran.find({'SURAH_NUMBER' : str(surah_number)}))
 
     classified_surah = dumps(classify(patterns, surah))
 
