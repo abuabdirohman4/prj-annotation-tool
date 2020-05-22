@@ -1,0 +1,20 @@
+[
+    {
+        "projectName": "New Custom Project",
+        "projectImage": "resources/images/projects/new-project.png",
+        "methodName": "Create a New Custom labeling project",
+        "dialog": []
+    },
+    {
+        "projectName": "New RB Project",
+        "projectImage": "resources/images/projects/rb-project.png",
+        "methodName": "Create a Rule Based labeling project.",
+        "dialog": []
+    },
+    {
+        "projectName": "New HMM Project",
+        "projectImage": "resources/images/projects/hmm-project.png",
+        "methodName": "Create a Hidden Markov Model labeling project.",
+        "dialog": []
+    }
+]
