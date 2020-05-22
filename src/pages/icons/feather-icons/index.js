@@ -42,11 +42,11 @@ class IconsFeatherIcons extends React.Component {
                 <h3 className="text-block mt-5 mb-4 text-center">
                   <strong>General Icons</strong>
                 </h3>
-                <ul className="air__utils__iconPresent list-unstyled">
+                <ul className="air__utils__iconPresent">
                   {iconsData.map(icon => (
-                    <Tooltip title={`fe ${icon}`} key={icon}>
+                    <Tooltip>
                       <li>
-                        <i className={`fe ${icon}`} />
+                        <i className={`${icon}`} /> ui
                       </li>
                     </Tooltip>
                   ))}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Word from 'components/quran/Word'
 
-class CardsBasicCards extends React.Component {
+class Edit extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -82,4 +82,4 @@ class CardsBasicCards extends React.Component {
   }
 }
 
-export default CardsBasicCards
+export default Edit

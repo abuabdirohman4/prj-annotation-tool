@@ -18,6 +18,28 @@ const loadable = loader =>
   })
 
 const routes = [
+  // Annotation Tool
+  {
+    path: '/projects/create',
+    Component: loadable(() => import('pages/projects/create')),
+    exact: true,
+  },
+  {
+    path: '/projects/create/method',
+    Component: loadable(() => import('pages/projects/create/method')),
+    exact: true,
+  },
+  {
+    path: '/projects/recent',
+    Component: loadable(() => import('pages/projects/recent')),
+    exact: true,
+  },
+  {
+    path: 'projects/edit',
+    Component: loadable(() => import('pages/projects/edit')),
+    exact: true,
+  },
+
   // Dashboards
   {
     path: '/dashboard/analytics',
@@ -358,7 +380,7 @@ class Router extends React.Component {
               )
             }}
           >
-            <Route exact path="/" render={() => <Redirect to="/dashboard/analytics" />} />
+            <Route exact path="/" render={() => <Redirect to="projects/create" />} />
             {routes.map(({ path, Component, exact }) => (
               <Route path={path} key={path} exact={exact}>
                 <Component />

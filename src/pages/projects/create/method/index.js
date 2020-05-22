@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import ButtonMethod from 'components/widgets/Buttons/Method'
 
-class DashboardAnalytics extends React.Component {
+class Method extends React.Component {
   render() {
     return (
       <div>
@@ -13,14 +13,6 @@ class DashboardAnalytics extends React.Component {
         <div className="row">
           <div className="col-xl-12 col-lg-6">
             <div className="row">
-              {/* Custom Project */}
-              <ButtonMethod
-                projectName="New Custom Project"
-                projectImage="resources/images/projects/new-project.png"
-                methodName="Create a New Custom labeling project"
-              />
-              {/* End Custom Project */}
-
               <ButtonMethod
                 projectName="New RB Project"
                 projectImage="resources/images/projects/rb-project.png"
@@ -50,4 +42,4 @@ class DashboardAnalytics extends React.Component {
   }
 }
 
-export default DashboardAnalytics
+export default Method

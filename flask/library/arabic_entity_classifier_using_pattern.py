@@ -81,3 +81,6 @@ def classify(patterns, ayats):
 
 
 
+
+
+# %%

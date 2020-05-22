@@ -76,7 +76,7 @@ class Layout extends React.PureComponent {
 
     return (
       <Fragment>
-        <Helmet titleTemplate="Air UI React | %s" title="React Admin Template" />
+        <Helmet titleTemplate="HLT | %s" title="Annotation Tool" />
         {BootstrappedLayout()}
       </Fragment>
     )

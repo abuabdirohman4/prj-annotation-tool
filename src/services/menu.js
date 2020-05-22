@@ -2,27 +2,27 @@ export default async function getMenuData() {
   return [
     {
       title: 'Projects',
-      key: 'dashboards',
+      key: 'projects',
       icon: 'lnr lnr-pencil',
       children: [
         {
           title: 'Create New Projects',
-          key: 'dashboardAnalytics',
-          url: '/dashboard/analytics',
+          key: 'Create',
+          url: '/projects/create',
         },
         {
           title: 'Open Recent Projects',
-          key: 'tablesAntd',
-          url: '/tables/antd',
+          key: 'Recent',
+          url: '/projects/recent',
         },
         {
           title: 'Edit Projects',
-          key: 'extraAppsWordpressAdd',
-          url: '/extra-apps/wordpress-add',
+          key: 'Edit',
+          url: '/projects/edit',
         },
         {
-          title: 'Al Quran',
-          key: 'cardsBasicCards',
+          title: 'Edit Projects',
+          key: 'CardsBasicCards',
           url: '/cards/basic-cards',
         },
       ],
