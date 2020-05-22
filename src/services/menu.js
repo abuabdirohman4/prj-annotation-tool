@@ -15,11 +15,11 @@ export default async function getMenuData() {
           key: 'Recent',
           url: '/projects/recent',
         },
-        {
-          title: 'Edit Projects',
-          key: 'Edit',
-          url: '/projects/edit',
-        },
+        // {
+        //   title: 'Edit Projects',
+        //   key: 'Edit',
+        //   url: '/projects/edit',
+        // },
         {
           title: 'Edit Projects',
           key: 'CardsBasicCards',
