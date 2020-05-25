@@ -32,7 +32,7 @@ class AppsMail extends React.Component {
         title: 'From',
         dataIndex: 'from',
         key: 'from',
-        render: text => <a href="javascript: void(0);">{text}</a>,
+        render: text => <a href="#">{text}</a>,
         sorter: (a, b) => a.from.length - b.from.length,
       },
       {
@@ -90,35 +90,26 @@ class AppsMail extends React.Component {
               >
                 <div className="d-flex flex-column">
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className={`${style.category} ${style.current} text-dark font-size-18 font-weight-bold`}
                   >
                     <span className="text-truncate">Inbox</span>
                     <span>(2)</span>
                   </a>
-                  <a
-                    href="javascript: void(0);"
-                    className={`${style.category} text-dark font-size-18`}
-                  >
+                  <a href="#" className={`${style.category} text-dark font-size-18`}>
                     <span className="text-truncate">Snoozed</span>
                   </a>
-                  <a
-                    href="javascript: void(0);"
-                    className={`${style.category} text-dark font-size-18`}
-                  >
+                  <a href="#" className={`${style.category} text-dark font-size-18`}>
                     <span className="text-truncate">Sent</span>
                   </a>
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className={`${style.category} text-dark font-size-18 font-weight-bold`}
                   >
                     <span className="text-truncate">Drafts</span>
                     <span>(1)</span>
                   </a>
-                  <a
-                    href="javascript: void(0);"
-                    className={`${style.category} text-dark font-size-18`}
-                  >
+                  <a href="#" className={`${style.category} text-dark font-size-18`}>
                     <span className="text-truncate">Spam</span>
                   </a>
                 </div>
@@ -143,7 +134,7 @@ class AppsMail extends React.Component {
                 </Tabs>
                 <div className="d-inline-flex align-items-center">
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="btn btn-sm btn-light mr-2"
                     data-toggle="tooltip"
                     data-placement="top"
@@ -153,7 +144,7 @@ class AppsMail extends React.Component {
                     <i className="fe fe-unlock" />
                   </a>
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="btn btn-sm btn-light mr-2"
                     data-toggle="tooltip"
                     data-placement="top"
@@ -163,7 +154,7 @@ class AppsMail extends React.Component {
                     <i className="fe fe-star" />
                   </a>
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="btn btn-sm btn-light"
                     data-toggle="tooltip"
                     data-placement="top"

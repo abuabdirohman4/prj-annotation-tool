@@ -27,7 +27,7 @@ class ExtraAppsDigitaloceanCreate extends React.Component {
               Operational / Developer tooling / Update your project information under Settings
             </div>
           </div>
-          <a className="btn btn-light btn-lg text-blue font-size-14" href="javascript: void(0);">
+          <a className="btn btn-light btn-lg text-blue font-size-14" href="#">
             Move Resources →
           </a>
         </div>
@@ -123,7 +123,7 @@ class ExtraAppsDigitaloceanCreate extends React.Component {
           Each Droplet adds more free data transfer to your account, starting at 1TB/month and
           scaling with Droplet usage and size. Additional outbound data transfer is billed at
           $.01/GB.
-          <a href="javascript: void(0);" className="text-blue">
+          <a href="#" className="text-blue">
             Read more
           </a>
           .
@@ -135,10 +135,7 @@ class ExtraAppsDigitaloceanCreate extends React.Component {
           Automatic system-level backups. Use the backup images to revert the server or create new
           Droplets. Backups cost 20% of the Droplet price.
         </p>
-        <a
-          className="btn btn-light btn-lg text-primary font-size-14 d-inline-block mb-5"
-          href="javascript: void(0);"
-        >
+        <a className="btn btn-light btn-lg text-primary font-size-14 d-inline-block mb-5" href="#">
           Enable Backups
         </a>
         <h6 className="mb-4 text-uppercase">
@@ -150,7 +147,7 @@ class ExtraAppsDigitaloceanCreate extends React.Component {
         </p>
         <a
           className="btn btn-light btn-lg text-primary font-size-14 d-inline-block mb-5 text-primary"
-          href="javascript: void(0);"
+          href="#"
         >
           Add Volume
         </a>
@@ -166,7 +163,7 @@ class ExtraAppsDigitaloceanCreate extends React.Component {
             <Input className="width-100p mb-5" placeholder="Please choose droplet hostname..." />
           </div>
         </div>
-        <a href="javascript: void(0);" className="btn btn-lg btn-success width-100p font-size-16">
+        <a href="#" className="btn btn-lg btn-success width-100p font-size-16">
           Create Droplet
         </a>
       </div>

@@ -17,10 +17,10 @@ class General7 extends React.Component {
           </div>
         </div>
         <div className="mb-3">
-          <a href="javascript: void(0);" className="btn btn-outline-primary mr-2">
+          <a href="#" className="btn btn-outline-primary mr-2">
             Chat
           </a>
-          <a href="javascript: void(0);" className="btn btn-outline-danger">
+          <a href="#" className="btn btn-outline-danger">
             Unfollow
           </a>
         </div>

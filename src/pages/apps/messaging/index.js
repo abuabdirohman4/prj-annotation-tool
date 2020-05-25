@@ -51,7 +51,7 @@ class AppsMessaging extends React.Component {
               >
                 {dialogs.map((item, index) => (
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     onClick={e => this.changeDialog(e, index)}
                     key={item.name}
                     className={`${style.item} ${
@@ -90,17 +90,17 @@ class AppsMessaging extends React.Component {
                 </div>
                 <div>
                   <Tooltip placement="top" title="Unlock Account">
-                    <a href="javascript: void(0);" className="btn btn-sm btn-light mr-2">
+                    <a href="#" className="btn btn-sm btn-light mr-2">
                       <i className="fe fe-unlock" />
                     </a>
                   </Tooltip>
                   <Tooltip placement="top" title="Mark as important">
-                    <a href="javascript: void(0);" className="btn btn-sm btn-light mr-2">
+                    <a href="#" className="btn btn-sm btn-light mr-2">
                       <i className="fe fe-star" />
                     </a>
                   </Tooltip>
                   <Tooltip placement="top" title="Delete user">
-                    <a href="javascript: void(0);" className="btn btn-sm btn-light">
+                    <a href="#" className="btn btn-sm btn-light">
                       <i className="fe fe-trash" />
                     </a>
                   </Tooltip>

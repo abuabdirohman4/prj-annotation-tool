@@ -128,7 +128,7 @@ class ExtraAppsJiraAgileBoard extends React.Component {
               <i className="fe fe-plus" />
             </button>
           </div>
-          <a className="mr-4" href="javascript: void(0);">
+          <a className="mr-4" href="#">
             Only My Issues
           </a>
           <div>Recently Updated</div>

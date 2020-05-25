@@ -50,7 +50,7 @@ class ExtraAppsDigitaloceanDroplets extends React.Component {
               Operational / Developer tooling / Update your project information under Settings
             </div>
           </div>
-          <a className="btn btn-light btn-lg text-blue font-size-14" href="javascript: void(0);">
+          <a className="btn btn-light btn-lg text-blue font-size-14" href="#">
             Move Resources →
           </a>
         </div>
@@ -98,7 +98,7 @@ class ExtraAppsDigitaloceanDroplets extends React.Component {
               <div className="d-flex align-items-center flex-wrap">
                 <div className="d-flex flex-nowrap align-items-center width-200 flex-shrink-1 mr-2">
                   <div className="air__utils__donut air__utils__donut--danger mr-2 flex-shrink-0" />
-                  <a href="javascript: void(0);" className="font-weight-bold text-blue text-nowrap">
+                  <a href="#" className="font-weight-bold text-blue text-nowrap">
                     mediatec-main-server
                   </a>
                 </div>
@@ -122,7 +122,7 @@ class ExtraAppsDigitaloceanDroplets extends React.Component {
               <div className="d-flex align-items-center flex-wrap">
                 <div className="d-flex flex-nowrap align-items-center width-200 flex-shrink-1 mr-2">
                   <div className="air__utils__donut air__utils__donut--success mr-2 flex-shrink-0" />
-                  <a href="javascript: void(0);" className="font-weight-bold text-blue text-nowrap">
+                  <a href="#" className="font-weight-bold text-blue text-nowrap">
                     mediatec-cdn
                   </a>
                 </div>

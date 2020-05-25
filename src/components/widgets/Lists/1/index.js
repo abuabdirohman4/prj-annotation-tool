@@ -8,7 +8,7 @@ class List1 extends React.Component {
         <div className="text-uppercase font-size-12 mb-2 text-gray-6">Documents (3)</div>
         <ul className="list-unstyled">
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={`${style.itemLink} mr-3`}>
                 <i className={`${style.itemIcon} fe fe-file`} />
               </div>
@@ -19,7 +19,7 @@ class List1 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={`${style.itemLink} mr-3`}>
                 <i className={`${style.itemIcon} fe fe-file`} />
               </div>
@@ -30,7 +30,7 @@ class List1 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={`${style.itemLink} mr-3`}>
                 <i className={`${style.itemIcon} fe fe-file`} />
               </div>
@@ -44,7 +44,7 @@ class List1 extends React.Component {
         <div className="text-uppercase font-size-12 mb-2 text-gray-6">Agents (4)</div>
         <ul className="list-unstyled">
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className="air__utils__avatar mr-3">
                 <img src="resources/images/avatars/5.jpg" alt="Mary Stanform" />
               </div>
@@ -55,7 +55,7 @@ class List1 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className="air__utils__avatar mr-3">
                 <img src="resources/images/avatars/1.jpg" alt="Jamie Rockstar" />
               </div>
@@ -66,7 +66,7 @@ class List1 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className="air__utils__avatar mr-3">
                 <img src="resources/images/avatars/4.jpg" alt="Jamie Rockstar" />
               </div>

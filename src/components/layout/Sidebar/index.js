@@ -106,7 +106,7 @@ class Sidebar extends React.Component {
       return props.colors.map(item => {
         return (
           <a
-            href="javascript: void(0);"
+            href="#"
             key={item}
             onClick={() => this.colorPickerHandler(props.setting, item)}
             className={classNames(`${style.air__sidebar__select__item}`, {
@@ -145,7 +145,7 @@ class Sidebar extends React.Component {
           >
             <div className={style.air__sidebar__inner}>
               <a
-                href="javascript: void(0);"
+                href="#"
                 className={`fe fe-x-circle ${style.air__sidebar__close}`}
                 onClick={this.toggleSettings}
               />
@@ -388,7 +388,7 @@ class Sidebar extends React.Component {
           </Scrollbars>
         </div>
         <a
-          href="javascript: void(0);"
+          href="#"
           onClick={this.toggleSettings}
           className={`${style.air__sidebar__toggleButton} btn btn-rounded btn-light text-nowrap text-dark font-weight-bold font-size-18`}
         >

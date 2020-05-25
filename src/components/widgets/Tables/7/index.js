@@ -15,7 +15,7 @@ const columns = [
     key: 'location',
     render: text => {
       return (
-        <a href="javascript: void(0);" className="text-blue">
+        <a href="#" className="text-blue">
           {text}
         </a>
       )

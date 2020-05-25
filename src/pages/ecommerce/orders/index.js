@@ -58,7 +58,7 @@ class EcommerceOrders extends React.Component {
         dataIndex: 'id',
         key: 'id',
         render: text => (
-          <a className="btn btn-sm btn-light" href="javascript: void(0);">
+          <a className="btn btn-sm btn-light" href="#">
             {text}
           </a>
         ),
@@ -75,7 +75,7 @@ class EcommerceOrders extends React.Component {
         key: 'customer',
         sorter: (a, b) => a.name.length - b.name.length,
         render: text => (
-          <a className="btn btn-sm btn-light" href="javascript: void(0);">
+          <a className="btn btn-sm btn-light" href="#">
             {text}
           </a>
         ),
@@ -153,11 +153,11 @@ class EcommerceOrders extends React.Component {
         key: 'action',
         render: () => (
           <span>
-            <a href="javascript: void(0);" className="btn btn-sm btn-light mr-2">
+            <a href="#" className="btn btn-sm btn-light mr-2">
               <i className="fe fe-edit mr-2" />
               View
             </a>
-            <a href="javascript: void(0);" className="btn btn-sm btn-light">
+            <a href="#" className="btn btn-sm btn-light">
               <small>
                 <i className="fe fe-trash mr-2" />
               </small>
@@ -180,7 +180,7 @@ class EcommerceOrders extends React.Component {
               <h5 className="mb-0">Latest Orders</h5>
             </div>
             <div className="d-flex flex-column justify-content-center">
-              <a className="btn btn-primary" href="javascript: void(0);">
+              <a className="btn btn-primary" href="#">
                 New Order
               </a>
             </div>

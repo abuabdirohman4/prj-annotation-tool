@@ -17,11 +17,11 @@ class ExtraAppsGithubDiscuss extends React.Component {
           <div className="mr-auto pr-3 my-2">
             <i className="fe fe-book font-size-21 mr-2" />
             <div className="text-nowrap d-inline-block font-size-18 text-dark">
-              <a className="font-size-18 text-blue" href="javascript: void(0);">
+              <a className="font-size-18 text-blue" href="#">
                 umijs
               </a>{' '}
               /
-              <a className="font-size-18 text-blue" href="javascript: void(0);">
+              <a className="font-size-18 text-blue" href="#">
                 umi
               </a>
             </div>
@@ -72,13 +72,13 @@ class ExtraAppsGithubDiscuss extends React.Component {
             </div>
             <div className="mb-3">
               <span className="mr-3 text-uppercase badge badge-success">Open</span>
-              <a className="font-weight-bold" href="javascript: void(0);">
+              <a className="font-weight-bold" href="#">
                 zxs2162
               </a>
               wrote this issue 12 days ago · 0 comments
             </div>
           </div>
-          <a className="btn btn-success align-self-start text-nowrap" href="javascript: void(0);">
+          <a className="btn btn-success align-self-start text-nowrap" href="#">
             New Issue
           </a>
         </div>
@@ -86,14 +86,14 @@ class ExtraAppsGithubDiscuss extends React.Component {
           <div className="col-lg-9">
             <div className="d-flex align-items-start mb-3">
               <a
-                href="javascript: void(0);"
+                href="#"
                 className="air__utils__avatar air__utils__avatar--size50 mr-3 flex-shrink-0"
               >
                 <img src="resources/images/avatars/5.jpg" alt="Mary Stanform" />
               </a>
               <div className="card flex-grow-1">
                 <div className="card-header">
-                  <a className="font-weight-bold" href="javascript: void(0);">
+                  <a className="font-weight-bold" href="#">
                     zxs2162
                   </a>{' '}
                   wrote this issue 12 days ago · 0 comments
@@ -171,7 +171,7 @@ class ExtraAppsGithubDiscuss extends React.Component {
             </div>
             <div className="d-flex align-items-start mb-3">
               <a
-                href="javascript: void(0);"
+                href="#"
                 className="air__utils__avatar air__utils__avatar--size50 mr-3 flex-shrink-0"
               >
                 <img src="resources/images/avatars/4.jpg" alt="Mary Stanform" />
@@ -192,10 +192,7 @@ class ExtraAppsGithubDiscuss extends React.Component {
                   />
                 </div>
                 <div className="card-body border-top py-2 px-3">
-                  <a
-                    href="javascript: void(0);"
-                    className="btn btn-success btn-with-addon text-nowrap ml-3 my-3"
-                  >
+                  <a href="#" className="btn btn-success btn-with-addon text-nowrap ml-3 my-3">
                     <span className="btn-addon">
                       <i className="btn-addon-icon fe fe-plus-circle" />
                     </span>
@@ -224,7 +221,7 @@ class ExtraAppsGithubDiscuss extends React.Component {
             </div>
             <div className="py-4 border-bottom">
               <div className="font-weight-bold mb-2">Notifications</div>
-              <a href="javascript: void(0);" className="btn btn-light text-blue mb-2">
+              <a href="#" className="btn btn-light text-blue mb-2">
                 Subscribe
               </a>
               <div>You’re not receiving notifications from this thread.</div>

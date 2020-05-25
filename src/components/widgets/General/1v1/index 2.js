@@ -10,7 +10,7 @@ class General1v1 extends React.Component {
           Lorem ipsum dolor sit amit,consectetur eiusmdd tempory incididunt ut labore et dolore
           magna elit
         </p>
-        <a href="javascript: void(0);" className="btn btn-outline-primary mb-1">
+        <a href="#" className="btn btn-outline-primary mb-1">
           View history
         </a>
       </div>

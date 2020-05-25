@@ -80,16 +80,10 @@ class ExtraAppsTodoistList extends React.Component {
                 >
                   <span className="text-truncate">Overall</span>
                 </div>
-                <a
-                  href="javascript: void(0);"
-                  className={`${style.category} text-dark font-size-18`}
-                >
+                <a href="#" className={`${style.category} text-dark font-size-18`}>
                   <span className="text-truncate">Today</span>
                 </a>
-                <a
-                  href="javascript: void(0);"
-                  className={`${style.category} text-dark font-size-18`}
-                >
+                <a href="#" className={`${style.category} text-dark font-size-18`}>
                   <span className="text-truncate">Next 7 days</span>
                 </a>
                 <div
@@ -97,10 +91,7 @@ class ExtraAppsTodoistList extends React.Component {
                 >
                   <span className="text-truncate">To Do Lists</span>
                 </div>
-                <a
-                  href="javascript: void(0);"
-                  className={`${style.category} ${style.current} text-dark font-size-18`}
-                >
+                <a href="#" className={`${style.category} ${style.current} text-dark font-size-18`}>
                   <span className="text-truncate">
                     Welcome{' '}
                     <span role="img" aria-label="hello">
@@ -108,16 +99,10 @@ class ExtraAppsTodoistList extends React.Component {
                     </span>
                   </span>
                 </a>
-                <a
-                  href="javascript: void(0);"
-                  className={`${style.category} text-dark font-size-18`}
-                >
+                <a href="#" className={`${style.category} text-dark font-size-18`}>
                   <span className="text-truncate">Homework (1)</span>
                 </a>
-                <a
-                  href="javascript: void(0);"
-                  className={`${style.category} text-dark font-size-18`}
-                >
+                <a href="#" className={`${style.category} text-dark font-size-18`}>
                   <span className="text-truncate">Fitness</span>
                 </a>
               </div>
@@ -136,17 +121,17 @@ class ExtraAppsTodoistList extends React.Component {
                 </div>
                 <div>
                   <Tooltip placement="top" title="Unlock Account">
-                    <a href="javascript: void(0);" className="btn btn-sm btn-light mr-2">
+                    <a href="#" className="btn btn-sm btn-light mr-2">
                       <i className="fe fe-unlock" />
                     </a>
                   </Tooltip>
                   <Tooltip placement="top" title="Mark as important">
-                    <a href="javascript: void(0);" className="btn btn-sm btn-light mr-2">
+                    <a href="#" className="btn btn-sm btn-light mr-2">
                       <i className="fe fe-star" />
                     </a>
                   </Tooltip>
                   <Tooltip placement="top" title="Delete user">
-                    <a href="javascript: void(0);" className="btn btn-sm btn-light">
+                    <a href="#" className="btn btn-sm btn-light">
                       <i className="fe fe-trash" />
                     </a>
                   </Tooltip>

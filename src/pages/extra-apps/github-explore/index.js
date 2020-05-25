@@ -42,11 +42,11 @@ class ExtraAppsGithubExplore extends React.Component {
           <div className="mr-auto pr-3 my-2">
             <i className="fe fe-book font-size-21 mr-2" />
             <div className="text-nowrap d-inline-block font-size-18 text-dark">
-              <a className="font-size-18 text-blue" href="javascript: void(0);">
+              <a className="font-size-18 text-blue" href="#">
                 umijs
               </a>{' '}
               /
-              <a className="font-size-18 text-blue" href="javascript: void(0);">
+              <a className="font-size-18 text-blue" href="#">
                 umi
               </a>
             </div>
@@ -92,27 +92,18 @@ class ExtraAppsGithubExplore extends React.Component {
         </Tabs>
         <div className="text-dark font-size-18 mb-3">
           Pluggable enterprise-level react application framework.
-          <a className="text-blue" href="javascript: void(0);">
+          <a className="text-blue" href="#">
             https://umijs.org/
           </a>
         </div>
         <div className="mb-4">
-          <a
-            href="javascript: void(0);"
-            className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
-          >
+          <a href="#" className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2">
             Umi
           </a>
-          <a
-            href="javascript: void(0);"
-            className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
-          >
+          <a href="#" className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2">
             React-framework
           </a>
-          <a
-            href="javascript: void(0);"
-            className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
-          >
+          <a href="#" className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2">
             Umijs
           </a>
         </div>
@@ -141,20 +132,20 @@ class ExtraAppsGithubExplore extends React.Component {
         <div className="d-flex flex-wrap border-bottom mb-3">
           <div className="my-3 mr-3">
             <Dropdown overlay={branchDropdown} placement="bottomLeft">
-              <a className="btn btn-light text-blue dropdown-toggle" href="javascript: void(0);">
+              <a className="btn btn-light text-blue dropdown-toggle" href="#">
                 Branch: Master
               </a>
             </Dropdown>
           </div>
-          <a className="btn btn-light text-blue my-3 mr-auto" href="javascript: void(0);">
+          <a className="btn btn-light text-blue my-3 mr-auto" href="#">
             New Pull Request
           </a>
-          <a className="btn btn-light text-blue my-3 mr-3" href="javascript: void(0);">
+          <a className="btn btn-light text-blue my-3 mr-3" href="#">
             Create New File
           </a>
           <div className="dropdown my-3 mr-3">
             <Dropdown overlay={downloadMenu} placement="bottomLeft">
-              <a className="btn btn-success dropdown-toggle" href="javascript: void(0);">
+              <a className="btn btn-success dropdown-toggle" href="#">
                 Clone or Download
               </a>
             </Dropdown>
@@ -162,7 +153,7 @@ class ExtraAppsGithubExplore extends React.Component {
         </div>
         <div className="d-flex align-items-center flex-wrap mb-4">
           <a
-            href="javascript: void(0);"
+            href="#"
             className="flex-shrink-0 d-flex align-items-center pr-3 mr-auto text-primary mt-1 mb-1"
           >
             <div className="air__utils__avatar air__utils__avatar--size27 mr-3 flex-shrink-0">
@@ -182,7 +173,7 @@ class ExtraAppsGithubExplore extends React.Component {
                     {item.type === 'file' && <i className="fa fa-file-o" />}
                   </td>
                   <td>
-                    <a href="javascript: void(0);" className="explore__nav-link">
+                    <a href="#" className="explore__nav-link">
                       {item.name}
                     </a>
                   </td>

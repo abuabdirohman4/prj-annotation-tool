@@ -16,34 +16,31 @@ class ExtraAppsWordpressPosts extends React.Component {
             <div className="card">
               <div className="card-body">
                 <div className="mb-2">
-                  <a
-                    href="javascript: void(0);"
-                    className="text-dark font-size-24 font-weight-bold"
-                  >
+                  <a href="#" className="text-dark font-size-24 font-weight-bold">
                     [Feature Request] How to enable custom font that comes from svg #2460
                   </a>
                 </div>
                 <div className="mb-3">
-                  <a className="font-weight-bold" href="javascript: void(0);">
+                  <a className="font-weight-bold" href="#">
                     zxs2162
                   </a>{' '}
                   wrote this post 12 days ago · 0 comments
                 </div>
                 <div className="mb-4">
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
                   >
                     Umi
                   </a>
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
                   >
                     React-framework
                   </a>
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
                   >
                     Umijs
@@ -74,34 +71,31 @@ class ExtraAppsWordpressPosts extends React.Component {
             <div className="card">
               <div className="card-body">
                 <div className="mb-2">
-                  <a
-                    href="javascript: void(0);"
-                    className="text-dark font-size-24 font-weight-bold"
-                  >
+                  <a href="#" className="text-dark font-size-24 font-weight-bold">
                     London&apos;s mayor compared President Trump to an 11-year-old child
                   </a>
                 </div>
                 <div className="mb-3">
-                  <a className="font-weight-bold" href="javascript: void(0);">
+                  <a className="font-weight-bold" href="#">
                     hepu
                   </a>{' '}
                   wrote this post 12 days ago · 0 comments
                 </div>
                 <div className="mb-4">
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
                   >
                     Umi
                   </a>
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
                   >
                     React-framework
                   </a>
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
                   >
                     Umijs
@@ -132,34 +126,31 @@ class ExtraAppsWordpressPosts extends React.Component {
             <div className="card">
               <div className="card-body">
                 <div className="mb-2">
-                  <a
-                    href="javascript: void(0);"
-                    className="text-dark font-size-24 font-weight-bold"
-                  >
+                  <a href="#" className="text-dark font-size-24 font-weight-bold">
                     What D-Day taught my grandpa
                   </a>
                 </div>
                 <div className="mb-3">
-                  <a className="font-weight-bold" href="javascript: void(0);">
+                  <a className="font-weight-bold" href="#">
                     Dankin
                   </a>{' '}
                   wrote this post 12 days ago · 0 comments
                 </div>
                 <div className="mb-4">
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
                   >
                     Umi
                   </a>
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
                   >
                     React-framework
                   </a>
                   <a
-                    href="javascript: void(0);"
+                    href="#"
                     className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
                   >
                     Umijs
@@ -215,22 +206,13 @@ class ExtraAppsWordpressPosts extends React.Component {
             <div className="pb-4 mb-3 border-bottom">
               <div className="font-weight-bold mb-2">Categories</div>
               <div>
-                <a
-                  href="javascript: void(0);"
-                  className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
-                >
+                <a href="#" className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2">
                   Umi
                 </a>
-                <a
-                  href="javascript: void(0);"
-                  className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
-                >
+                <a href="#" className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2">
                   React-framework
                 </a>
-                <a
-                  href="javascript: void(0);"
-                  className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2"
-                >
+                <a href="#" className="badge text-blue text-uppercase bg-gray-1 font-size-12 mr-2">
                   Umijs
                 </a>
               </div>

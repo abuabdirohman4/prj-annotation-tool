@@ -23,7 +23,7 @@ class SystemPricingTables extends React.Component {
                 <li>256MB Memory</li>
                 <li>1 GB Storage</li>
               </ul>
-              <a className="btn btn-primary width-100" href="javascript: void(0);">
+              <a className="btn btn-primary width-100" href="#">
                 Get Access
               </a>
             </div>
@@ -40,7 +40,7 @@ class SystemPricingTables extends React.Component {
                 <li>512MB Memory</li>
                 <li>2 GB Storage</li>
               </ul>
-              <a className="btn btn-primary width-100" href="javascript: void(0);">
+              <a className="btn btn-primary width-100" href="#">
                 Get Access
               </a>
             </div>
@@ -57,7 +57,7 @@ class SystemPricingTables extends React.Component {
                 <li>4096MB Memory</li>
                 <li>8 GB Storage</li>
               </ul>
-              <a className="btn btn-primary width-100" href="javascript: void(0);">
+              <a className="btn btn-primary width-100" href="#">
                 Get Access
               </a>
             </div>
@@ -78,7 +78,7 @@ class SystemPricingTables extends React.Component {
                 <li>256MB Memory</li>
                 <li>1 GB Storage</li>
               </ul>
-              <a className="btn btn-primary width-100" href="javascript: void(0);">
+              <a className="btn btn-primary width-100" href="#">
                 Get Access
               </a>
             </div>
@@ -95,7 +95,7 @@ class SystemPricingTables extends React.Component {
                 <li>512MB Memory</li>
                 <li>2 GB Storage</li>
               </ul>
-              <a className="btn btn-primary width-100" href="javascript: void(0);">
+              <a className="btn btn-primary width-100" href="#">
                 Get Access
               </a>
             </div>
@@ -112,7 +112,7 @@ class SystemPricingTables extends React.Component {
                 <li>4096MB Memory</li>
                 <li>8 GB Storage</li>
               </ul>
-              <a className="btn btn-primary width-100" href="javascript: void(0);">
+              <a className="btn btn-primary width-100" href="#">
                 Get Access
               </a>
             </div>
@@ -133,7 +133,7 @@ class SystemPricingTables extends React.Component {
                 <li>256MB Memory</li>
                 <li>1 GB Storage</li>
               </ul>
-              <a className="btn btn-primary width-100" href="javascript: void(0);">
+              <a className="btn btn-primary width-100" href="#">
                 Get Access
               </a>
             </div>
@@ -152,7 +152,7 @@ class SystemPricingTables extends React.Component {
                 <li>512MB Memory</li>
                 <li>2 GB Storage</li>
               </ul>
-              <a className="btn text-blue width-100" href="javascript: void(0);">
+              <a className="btn text-blue width-100" href="#">
                 Get Access
               </a>
             </div>
@@ -169,7 +169,7 @@ class SystemPricingTables extends React.Component {
                 <li>4096MB Memory</li>
                 <li>8 GB Storage</li>
               </ul>
-              <a className="btn btn-primary width-100" href="javascript: void(0);">
+              <a className="btn btn-primary width-100" href="#">
                 Get Access
               </a>
             </div>

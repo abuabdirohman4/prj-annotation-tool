@@ -55,7 +55,7 @@ class AdvancedEmailTemplates extends React.Component {
                               design and clear call to action.
                             </p>
                             <a
-                              href="javascript: void(0);"
+                              href="#"
                               style={{
                                 display: 'inline-block',
                                 padding: '11px 30px 6px',
@@ -91,7 +91,7 @@ class AdvancedEmailTemplates extends React.Component {
                       <br />
                       Don&apos;t like these emails?{' '}
                       <a
-                        href="javascript: void(0);"
+                        href="#"
                         style={{
                           color: '#a09bb9',
                           textDecoration: 'underline',
@@ -162,7 +162,7 @@ class AdvancedEmailTemplates extends React.Component {
                             </p>
                             <div style={{ textAlign: 'center' }}>
                               <a
-                                href="javascript: void(0);"
+                                href="#"
                                 style={{
                                   display: 'inline-block',
                                   padding: '11px 30px 6px',
@@ -201,10 +201,7 @@ class AdvancedEmailTemplates extends React.Component {
                       Mediatec Software Inc., Abbey Road, San Francisco CA 94102
                       <br />
                       Don&apos;t like these emails?{' '}
-                      <a
-                        href="javascript: void(0);"
-                        style={{ color: '#a09bb9', textDecoration: 'underline' }}
-                      >
+                      <a href="#" style={{ color: '#a09bb9', textDecoration: 'underline' }}>
                         Unsubscribe
                       </a>
                       <br />
@@ -592,10 +589,7 @@ class AdvancedEmailTemplates extends React.Component {
                             <br />
                             <p style={{ textAlign: 'center' }}>
                               Notice something wrong?{' '}
-                              <a
-                                href="javascript: void(0);"
-                                style={{ color: '#01a8fe', textDecoration: 'underline' }}
-                              >
+                              <a href="#" style={{ color: '#01a8fe', textDecoration: 'underline' }}>
                                 Contact our support team
                               </a>{' '}
                               and we&apos;ll e happy to help.
@@ -617,10 +611,7 @@ class AdvancedEmailTemplates extends React.Component {
                       Mediatec Software Inc., Abbey Road, San Francisco CA 94102
                       <br />
                       Don&apos;t like these emails?{' '}
-                      <a
-                        href="javascript: void(0);"
-                        style={{ color: '#a09bb9', textDecoration: 'underline' }}
-                      >
+                      <a href="#" style={{ color: '#a09bb9', textDecoration: 'underline' }}>
                         Unsubscribe
                       </a>
                       <br />
@@ -708,7 +699,7 @@ class AdvancedEmailTemplates extends React.Component {
                             <p>Congratulations! Something good has appened.</p>
                             <div style={{ textAlign: 'center' }}>
                               <a
-                                href="javascript: void(0);"
+                                href="#"
                                 style={{
                                   display: 'inline-block',
                                   padding: '11px 30px 6px',
@@ -740,10 +731,7 @@ class AdvancedEmailTemplates extends React.Component {
                       Mediatec Software Inc., Abbey Road, San Francisco CA 94102
                       <br />
                       Don&apos;t like these emails?{' '}
-                      <a
-                        href="javascript: void(0);"
-                        style={{ color: '#a09bb9', textDecoration: 'underline' }}
-                      >
+                      <a href="#" style={{ color: '#a09bb9', textDecoration: 'underline' }}>
                         Unsubscribe
                       </a>
                       <br />

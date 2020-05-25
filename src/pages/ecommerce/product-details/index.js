@@ -93,7 +93,7 @@ class EcommerceProductDetails extends React.Component {
                   </Select>
                 </div>
                 <a
-                  href="javascript: void(0);"
+                  href="#"
                   className="width-200 btn btn-success btn-with-addon mr-auto mb-3 text-nowrap d-none d-md-block"
                 >
                   <span className="btn-addon">

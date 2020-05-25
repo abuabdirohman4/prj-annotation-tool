@@ -41,9 +41,7 @@ class Login extends React.Component {
         </div>
         <div className={`${style.container} pl-5 pr-5 pt-5 pb-5 bg-white`}>
           <div className="text-dark font-size-30 mb-2 text-center">Log In</div>
-          <div className="text-muted text-center mb-4">
-            Login and password
-          </div>
+          <div className="text-muted text-center mb-4">Login and password</div>
           <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit} className="mb-4">
             <Form.Item>
               {form.getFieldDecorator('email', {
@@ -91,19 +89,21 @@ class Login extends React.Component {
             className={`${style.footerNav} list-unstyled d-flex mb-2 flex-wrap justify-content-center`}
           >
             <li>
-              <a href="javascript: void(0);">Terms of Use</a>
+              <a href="#">Terms of Use</a>
             </li>
             <li>
-              <a href="javascript: void(0);">Compliance</a>
+              <a href="#">Compliance</a>
             </li>
             <li>
-              <a href="javascript: void(0);">Support</a>
+              <a href="#">Support</a>
             </li>
             <li>
-              <a href="javascript: void(0);">Contacts</a>
+              <a href="#">Contacts</a>
             </li>
           </ul>
-          <div className="text-gray-4 text-center">© 2019 Telkom University. All rights reserved.</div>
+          <div className="text-gray-4 text-center">
+            © 2019 Telkom University. All rights reserved.
+          </div>
         </div>
       </div>
     )

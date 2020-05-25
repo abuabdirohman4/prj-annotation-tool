@@ -15,7 +15,7 @@ const columns = [
     key: 'location',
     render: text => {
       return (
-        <a href="javascript: void(0);" className="text-blue">
+        <a href="#" className="text-blue">
           {text}
         </a>
       )
@@ -139,10 +139,10 @@ class SystemInvoice extends React.Component {
           <div>
             Grand Total: <span className="font-weight-bold">$487,767.00</span>
           </div>
-          <a href="javascript: void(0);" className="btn btn-outline-success mr-3 mt-3">
+          <a href="#" className="btn btn-outline-success mr-3 mt-3">
             Proceed Payment
           </a>
-          <a href="javascript: void(0);" className="btn btn-outline-success mt-3">
+          <a href="#" className="btn btn-outline-success mt-3">
             Print
           </a>
         </div>

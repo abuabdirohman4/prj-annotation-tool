@@ -19,7 +19,7 @@ class EcommerceCart extends React.Component {
         title: 'Description',
         dataIndex: 'description',
         render: text => (
-          <a className="btn btn-sm btn-light" href="javascript: void(0);">
+          <a className="btn btn-sm btn-light" href="#">
             {text}
           </a>
         ),
@@ -44,7 +44,7 @@ class EcommerceCart extends React.Component {
         title: '',
         dataIndex: '',
         render: () => (
-          <a href="javascript: void(0);" className="btn btn-sm btn-light">
+          <a href="#" className="btn btn-sm btn-light">
             <i className="fe fe-trash mr-1" /> Remove
           </a>
         ),
@@ -206,7 +206,7 @@ class EcommerceCart extends React.Component {
               <p className="mb-4">
                 Grand Total: <strong className="font-size-36">$5,757.00</strong>
               </p>
-              <a href="javascript: void(0);" className="btn btn-lg btn-success width-200 mb-2">
+              <a href="#" className="btn btn-lg btn-success width-200 mb-2">
                 Order Now
               </a>
             </div>

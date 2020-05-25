@@ -53,7 +53,7 @@ class DashboardJira extends React.Component {
                 <h3 className="text-dark font-size-18 font-weight-bold mb-3">Welcome to Jira</h3>
                 <p>
                   New to Jira? Check out the
-                  <a href="javascript: void(0);" className="text-blue">
+                  <a href="#" className="text-blue">
                     Jira User&apos;s Guide.
                   </a>
                 </p>
@@ -107,7 +107,7 @@ class DashboardJira extends React.Component {
               <div className="card-body">
                 <p>
                   You currently have no{' '}
-                  <a href="javascript: void(0);" className="text-blue">
+                  <a href="#" className="text-blue">
                     issues
                   </a>{' '}
                   assigned to you. Enjoy your day!

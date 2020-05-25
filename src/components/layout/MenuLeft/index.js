@@ -227,7 +227,7 @@ class MenuLeft extends React.Component {
             </Link>
           )}
           {!item.url && (
-            <a href="javascript: void(0);" className={style.air__menuLeft__link}>
+            <a href="#" className={style.air__menuLeft__link}>
               {icon && <i className={`${icon} ${style.air__menuLeft__icon}`} />}
               <span>{title}</span>
             </a>
@@ -245,7 +245,7 @@ class MenuLeft extends React.Component {
           key={item.key}
         >
           <a
-            href="javascript: void(0);"
+            href="#"
             className={style.air__menuLeft__link}
             onClick={() => this.handleSubmenuClick(item.key)}
             onMouseEnter={event => this.handleFlyoutOver(event, item.key, item.children)}
@@ -317,26 +317,22 @@ class MenuLeft extends React.Component {
         >
           <div className={style.air__menuLeft__outer}>
             <a
-              href="javascript: void(0);"
+              href="#"
               className={style.air__menuLeft__mobileToggleButton}
               onClick={this.toggleMobileMenu}
             >
               <span />
             </a>
-            <a
-              href="javascript: void(0);"
-              className={style.air__menuLeft__toggleButton}
-              onClick={this.toggleMenu}
-            >
+            <a href="#" className={style.air__menuLeft__toggleButton} onClick={this.toggleMenu}>
               <span />
               <span />
             </a>
-            <a href="javascript: void(0);" className={style.air__menuLeft__logo}>
+            <a href="#" className={style.air__menuLeft__logo}>
               <img src="resources/images/air-logo.png" alt="Air UI" />
               <div className={style.air__menuLeft__logo__name}>HLT LAB</div>
               <div className={style.air__menuLeft__logo__descr}>Annotation Tool</div>
             </a>
-            <a href="javascript: void(0);" className={style.air__menuLeft__user}>
+            <a href="#" className={style.air__menuLeft__user}>
               <div className={style.air__menuLeft__user__avatar}>
                 <img src="resources/images/avatars/avatar.png" alt="Abu Abdirohman" />
               </div>
@@ -364,11 +360,7 @@ class MenuLeft extends React.Component {
                     <span>Information</span>
                   </li>
                   <li className={style.air__menuLeft__item}>
-                    <a
-                      href="javascript: void(0);"
-                      className={style.air__menuLeft__link}
-                      onClick={this.toggleSettings}
-                    >
+                    <a href="#" className={style.air__menuLeft__link} onClick={this.toggleSettings}>
                       <i className={`fe fe-settings ${style.air__menuLeft__icon}`} />
                       <span>Settings</span>
                     </a>
@@ -395,11 +387,7 @@ class MenuLeft extends React.Component {
             </Scrollbars>
           </div>
         </div>
-        <a
-          href="javascript: void(0);"
-          className={style.air__menuLeft__backdrop}
-          onClick={this.toggleMobileMenu}
-        />
+        <a href="#" className={style.air__menuLeft__backdrop} onClick={this.toggleMobileMenu} />
       </Sider>
     )
   }
