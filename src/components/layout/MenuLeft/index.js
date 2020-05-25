@@ -338,7 +338,7 @@ class MenuLeft extends React.Component {
             </a>
             <a href="javascript: void(0);" className={style.air__menuLeft__user}>
               <div className={style.air__menuLeft__user__avatar}>
-                <img src="resources/images/avatars/avatar.png" alt="David Beckham" />
+                <img src="resources/images/avatars/avatar.png" alt="Abu Abdirohman" />
               </div>
               <div className={style.air__menuLeft__user__name}>Abu Abdirohman</div>
               <div className={style.air__menuLeft__user__role}>Administrator</div>
@@ -384,7 +384,6 @@ class MenuLeft extends React.Component {
                       <span>Documentation</span>
                     </a>
                   </li> */}
-
                 </ul>
                 {/* <div className={style.air__menuLeft__banner}>
                   <p>More components, more styles, more themes, and premium support!</p>

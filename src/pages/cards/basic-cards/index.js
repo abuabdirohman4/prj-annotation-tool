@@ -1,18 +1,25 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { Select } from 'antd'
 import Word from 'components/quran/Word'
+import { State } from 'react-powerplug'
+import Surah from './data.json'
 
+// coba pake state react-powerplug
+
+const { Option } = Select
 class CardsBasicCards extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       words: [],
+      // key: 1
     }
     this.word_key = -1
   }
 
   componentDidMount() {
-    fetch('http://localhost:5000/API/get_surah/1')
+    fetch(`http://localhost:5000/API/get_surah/1`)
       .then(res => res.json())
       .then(res => {
         this.setState({ words: res })
@@ -29,7 +36,7 @@ class CardsBasicCards extends React.Component {
 
     return words.map((word, k) => {
       if (k < words.length - 1) if (word.WORD_NUMBER !== words[k + 1].WORD_NUMBER) word.ARAB += ' '
-
+      console.log(word['OPEN TAG'])
       if (word['OPEN TAG'] !== '') {
         word['OPEN TAG'] = word['OPEN TAG'].split('(')
 
@@ -44,7 +51,7 @@ class CardsBasicCards extends React.Component {
         word['CLOSE TAG'] = word['CLOSE TAG'].split(')')
 
         word['CLOSE TAG'].forEach(v => {
-          console.log(v)
+          // console.log(v)
 
           if (v !== '') word.ARAB = `${word.ARAB})${v}`
         })
@@ -54,30 +61,60 @@ class CardsBasicCards extends React.Component {
     })
   }
 
+  // ComponentDidUpdate(prevProps, prevState, snapshot) {
+  //   fetch(`http://localhost:5000/API/get_surah/${this.state.key}`)
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       this.setState({ words: res })
+  //     })
+  // }
+
   render() {
     const { words } = this.state
 
     return (
-      <div>
-        <Helmet title="Al Quran" />
-        <div className="air__utils__heading">
-          <h5>
-            <span className="mr-3">Edit Projects</span>
-          </h5>
-        </div>
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="card">
-              <div className="card-header card-header-flex align-items-center">
-                <div className="d-flex flex-column justify-content-center mr-auto">
-                  <h5 className="mb-0">Al Fatihah</h5>
+      <State initial={{ selectValue: 'Al Fatihah' }}>
+        {({ state, setState }) => (
+          <div>
+            <Helmet title="Al Quran" />
+            <div className="air__utils__heading">
+              <h5>
+                <span className="mr-3">Edit Projects</span>
+              </h5>
+            </div>
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="card">
+                  <div className="card-header card-header-flex align-items-center">
+                    <div className="d-flex flex-column justify-content-center mr-auto">
+                      {/* <h5 className="mb-0">Al Fatihah</h5> */}
+                      <div className="mb-0 width-300">
+                        <Select
+                          defaultValue={state.selectValue}
+                          onChange={e => {
+                            console.log(e)
+                            setState({ e })
+                          }}
+                          style={{ width: 300 }}
+                        >
+                          {Surah.map(data => {
+                            return (
+                              <Option key={data.surahNumber} value={data.surahNumber}>
+                                {data.surahName}
+                              </Option>
+                            )
+                          })}
+                        </Select>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-body card-quran text-right">{this.createWords(words)}</div>
                 </div>
               </div>
-              <div className="card-body card-quran text-right">{this.createWords(words)}</div>
             </div>
           </div>
-        </div>
-      </div>
+        )}
+      </State>
     )
   }
 }

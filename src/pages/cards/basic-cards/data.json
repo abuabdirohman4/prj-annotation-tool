@@ -1,0 +1,18 @@
+[
+    {
+        "surahName": "Al Fatihah",
+        "surahNumber" : 1
+    },
+    {
+        "surahName": "Al Baqarah",
+        "surahNumber": 2
+    },
+    {
+        "surahName": "Al Maidah",
+        "surahNumber": 3
+    },
+    {
+        "surahName": "An Nissa",
+        "surahNumber": 4
+    }
+]
