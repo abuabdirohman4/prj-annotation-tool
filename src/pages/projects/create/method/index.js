@@ -1,9 +1,40 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import ButtonMethod from 'components/widgets/Buttons/Method'
+import { Modal } from 'antd'
+import Data from '../data.json'
 
 class Method extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      visible: false,
+    }
+  }
+
+  showModal = () => {
+    // console.log("CEK MUNCUL GK")
+    this.setState({
+      visible: true,
+    })
+  }
+
+  handleOk = e => {
+    console.log(e)
+    this.setState({
+      visible: false,
+    })
+  }
+
+  handleCancel = e => {
+    console.log(e)
+    this.setState({
+      visible: false,
+    })
+  }
+
   render() {
+    const { visible, handleOk, handleCancel } = this.state
     return (
       <div>
         <Helmet title="Dashboard: Analytics" />
@@ -13,27 +44,32 @@ class Method extends React.Component {
         <div className="row">
           <div className="col-xl-12 col-lg-6">
             <div className="row">
-              <ButtonMethod
-                projectName="New RB Project"
-                projectImage="resources/images/projects/rb-project.png"
-                methodName="Create a Rule Based labeling project."
-              />
-
-              {/* Hidden Markov Model Project */}
-              <ButtonMethod
-                projectName="New HMM Project"
-                projectImage="resources/images/projects/hmm-project.png"
-                methodName="Create a Hidden Markov Model labeling project."
-              />
-              {/* End Hidden Markov Model Project */}
-
-              {/* Conditional Random Field Project */}
-              <ButtonMethod
-                projectName="New CFF Project"
-                projectImage="resources/images/projects/crf-project.png"
-                methodName="Create a Facial Feature Extraction labeling project."
-              />
-              {/* End Conditional Random Field Project */}
+              {Data.map(data => {
+                return (
+                  <ButtonMethod
+                    projectName={data.projectName}
+                    projectImage={data.projectImage}
+                    methodName={data.methodName}
+                    key={data.id}
+                    click={this.showModal}
+                    link="#"
+                  />
+                )
+              })}
+              <Modal title="Basic Modal" visible={visible} onOk={handleOk} onCancel={handleCancel}>
+                {Data.map(data => {
+                  return (
+                    <ButtonMethod
+                      projectName={data.projectName}
+                      projectImage={data.projectImage}
+                      methodName={data.methodName}
+                      key={data.id}
+                      click={this.showModal}
+                      link="#"
+                    />
+                  )
+                })}
+              </Modal>
             </div>
           </div>
         </div>

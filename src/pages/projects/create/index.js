@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import ButtonMethod from 'components/widgets/Buttons/Method'
+// import Method from './method'
 
 class Create extends React.Component {
   render() {

@@ -9,6 +9,7 @@ class ButtonMethod extends React.Component {
     this.projectName = props.projectName
     this.projectImage = props.projectImage
     this.link = props.link
+    this.click = props.click
     this.toggleHover = this.toggleHover.bind(this)
     this.tooltip = React.createRef()
     this.myRef = null
@@ -63,7 +64,13 @@ class ButtonMethod extends React.Component {
             onMouseEnter={this.toggleHover}
             onMouseLeave={this.toggleHover}
           >
-            <div className="card-body">
+            <div
+              className="card-body"
+              onClick={this.click}
+              onKeyDown={this.click}
+              role="button"
+              tabIndex="0"
+            >
               <div className="text-center">
                 <div className="text-dark font-size-18 font-weight-bold mb-1">
                   {this.projectName}
