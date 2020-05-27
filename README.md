@@ -4,30 +4,14 @@ Aplikasi untuk membantu para peniliti Al Qur'an untuk menganotasi entitas-entita
 
 ## Getting Started
 
-<!-- These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. -->
-Instruksi ini akan memandumu untuk mendapatkan salinan aplikasi dan menjalankannya di komputer lokalmu untuk keperluan pengembangan dan pengujian.
+Instruksi ini akan mambantu anda untuk mendapatkan salinan aplikasi dan menjalankannya di komputer lokak untuk keperluan pengembangan dan pengujian.
 
 ### Prerequisites
 
 1. Install node.js terbaru: https://nodejs.org
 2. Install yarn package manager terbaru: https://yarnpkg.com/
-
-<!-- ### Installing -->
-<!-- A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo -->
+3. Instal python untuk dapat menggunakan python package manager: https://python.org/
+4. Install mongoDB: https://www.mongodb.com/try/download/community
 
 ### Installing
 
@@ -38,63 +22,54 @@ Langkah-langkah dalam menginstallnya sebagai berikut :
 ```
 git clone https://github.com/abuabdirohman4/human-entity-quran-annotation-tool.git
 ```
-2. Install node_module dengan yarn
+2. Install node_module, react text annotate dan react powerplug dengan yarn
 ```
-yarn install
+yarn install react-text-annotation react powerplug
 ```
-
-<!-- ## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+3. Membuat Environment
+* Masuklah pada folder flask
 ```
-Give an example
+cd flask
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
+* Lalu buat virtual environment
 ```
-Give an example
+python3 -m venv venv
 ```
+4. Menginstall Requirement Flask
+Masih di dalam folder flask, install requirement untuk flask
+```
+pip install -r requirement.txt
+```
+4. Import Database
+* Untuk proses import, saya menyarankan menggunakan [MongoDB Compass](https://www.mongodb.com/products/compass) (GUI untuk mongoDB)
+* Buatlah database dengan nama _annotation_tool_
+* Buat juga 2 collection dengan nama _quran_ dan _patterns_
+* Import file yang berada di folder _mongo_collections_ pada collection dengan path:
+```
+human-entity-quran-annotation-tool/flask/data
+```
+* Untuk import file dengan MongoDB Compass dijelaskan di [Import and Export Data](https://docs.mongodb.com/compass/master/import-export/#import-data-into-a-collection)
 
-## Deployment
+## Running
 
-Add additional notes about how to deploy this on a live system -->
+Untuk menjalankaannya anda perlu menyediakan 2 buah terminal, yang pertama untuk menjalankan _flask_ sebagai _backend_-nya dan yang kedua untuk menjalankan _react_ sebagai _frontend_-nya 
+
+1. Menjalankan flask di http://localhost:5000/
+```
+start-flask run
+```
+2. Menjalanka react di http://localhost:3000/
+```
+start-react run
+```
 
 ## Built With
 
-* [Air UI Admin Template](https://docs.airuitemplate.com/)
-<!-- * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds -->
-
-<!-- ## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us. -->
-
-<!-- ## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).  -->
+* [React](https://reactjs.org/) - Javascript Library
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Web Application Framework
+* [MongoDB](https://www.mongodb.com/) - Database for Modern Application
+* [Air UI Admin Template](https://docs.airuitemplate.com/) - Admin Template
 
 ## Authors
 
 * **Abu Abdirohman** - *Mahasiswa* - [abuabdirohman4](https://github.com/abuabdirohman4)
-
-
-<!-- See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
-
-<!-- ## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details -->
-
-<!-- ## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc -->

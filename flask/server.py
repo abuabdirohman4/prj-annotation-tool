@@ -10,7 +10,7 @@ import os
 from arabic_entity_classifier_using_pattern import classify
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = "mongodb://127.0.0.1:27017/TA"
+app.config['MONGO_URI'] = "mongodb://127.0.0.1:27017/annotation_tool"
 
 mongo = PyMongo(app)
 cors = CORS(app)
@@ -21,8 +21,8 @@ def get_surah(surah_number):
     def pattern_to_array(row):
         return row['pattern'].split(',')
 
-    patterns = list(map(pattern_to_array, list(mongo.db.mongo_patterns.find())))
-    surah = list(mongo.db.mongo_quran.find({'SURAH_NUMBER' : str(surah_number)}))
+    patterns = list(map(pattern_to_array, list(mongo.db.patterns.find())))
+    surah = list(mongo.db.quran.find({'SURAH_NUMBER' : str(surah_number)}))
 
     classified_surah = dumps(classify(patterns, surah))
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "react-app-rewired start",
+    "start-react": "react-app-rewired start",
     "start-flask": "cd flask && venv/bin/flask run",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
