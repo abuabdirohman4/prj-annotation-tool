@@ -10,7 +10,7 @@ Instruksi ini akan mambantu anda untuk mendapatkan salinan aplikasi dan menjalan
 
 1. Install node.js terbaru: https://nodejs.org
 2. Install yarn package manager terbaru: https://yarnpkg.com/
-3. Install python untuk dapat menggunakan python package manager: https://python.org/
+3. Install python terbaru: https://python.org/
 4. Install mongoDB: https://www.mongodb.com/try/download/community
 
 ### Installing
