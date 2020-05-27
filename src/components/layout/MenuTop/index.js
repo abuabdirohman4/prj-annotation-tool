@@ -216,7 +216,7 @@ class MenuTop extends React.Component {
             </Link>
           )}
           {!item.url && (
-            <a href="javascript: void(0);" className={style.air__menuTop__link}>
+            <a href="#" className={style.air__menuTop__link}>
               {icon && <i className={`${icon} ${style.air__menuTop__icon}`} />}
               <span>{title}</span>
             </a>
@@ -234,7 +234,7 @@ class MenuTop extends React.Component {
           key={item.key}
         >
           <a
-            href="javascript: void(0);"
+            href="#"
             className={style.air__menuTop__link}
             onClick={() => this.handleSubmenuClick(item.key)}
             onMouseEnter={event => this.handleFlyoutOver(event, item.key, item.children)}
@@ -300,13 +300,13 @@ class MenuTop extends React.Component {
         >
           <div className={style.air__menuTop__outer}>
             <a
-              href="javascript: void(0);"
+              href="#"
               className={style.air__menuTop__mobileToggleButton}
               onClick={this.toggleMobileMenu}
             >
               <span />
             </a>
-            <a href="javascript: void(0);" className={style.air__menuTop__logo}>
+            <a href="#" className={style.air__menuTop__logo}>
               <img src="resources/images/air-logo.png" alt="Air UI" />
               <div className={style.air__menuTop__logo__name}>AIR UI</div>
               <div className={style.air__menuTop__logo__descr}>Admin Template</div>
@@ -314,11 +314,7 @@ class MenuTop extends React.Component {
             <div id="menu-left-container" className={style.air__menuTop__container}>
               <ul className={style.air__menuTop__list}>
                 <li className={style.air__menuTop__item}>
-                  <a
-                    href="javascript: void(0);"
-                    className={style.air__menuTop__link}
-                    onClick={this.toggleSettings}
-                  >
+                  <a href="#" className={style.air__menuTop__link} onClick={this.toggleSettings}>
                     <i className={`fe fe-settings ${style.air__menuTop__icon}`} />
                     <span>Settings</span>
                   </a>
@@ -339,11 +335,7 @@ class MenuTop extends React.Component {
             </div>
           </div>
         </div>
-        <a
-          href="javascript: void(0);"
-          className={style.air__menuTop__backdrop}
-          onClick={this.toggleMobileMenu}
-        />
+        <a href="#" className={style.air__menuTop__backdrop} onClick={this.toggleMobileMenu} />
       </div>
     )
   }

@@ -60,16 +60,16 @@ class ForgotPassword extends React.Component {
             className={`${style.footerNav} list-unstyled d-flex mb-2 flex-wrap justify-content-center`}
           >
             <li>
-              <a href="javascript: void(0);">Terms of Use</a>
+              <a href="#">Terms of Use</a>
             </li>
             <li>
-              <a href="javascript: void(0);">Compliance</a>
+              <a href="#">Compliance</a>
             </li>
             <li>
-              <a href="javascript: void(0);">Support</a>
+              <a href="#">Support</a>
             </li>
             <li>
-              <a href="javascript: void(0);">Contacts</a>
+              <a href="#">Contacts</a>
             </li>
           </ul>
           <div className="text-gray-4 text-center">© 2019 Mediatec. All rights reserved.</div>

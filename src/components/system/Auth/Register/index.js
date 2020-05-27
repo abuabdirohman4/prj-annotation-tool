@@ -67,11 +67,11 @@ class Register extends React.Component {
           </Link>
           <div className="font-size-18 text-center">
             <span className="mr-1">By signing up, you agree to the</span>
-            <a href="javascript: void(0);" className="text-blue font-weight-bold font-size-18 mr-1">
+            <a href="#" className="text-blue font-weight-bold font-size-18 mr-1">
               Terms of Service
             </a>{' '}
             and
-            <a href="javascript: void(0);" className="text-blue font-weight-bold font-size-18 ml-1">
+            <a href="#" className="text-blue font-weight-bold font-size-18 ml-1">
               Privacy Policy
             </a>
           </div>
@@ -87,16 +87,16 @@ class Register extends React.Component {
             className={`${style.footerNav} list-unstyled d-flex mb-2 flex-wrap justify-content-center`}
           >
             <li>
-              <a href="javascript: void(0);">Terms of Use</a>
+              <a href="#">Terms of Use</a>
             </li>
             <li>
-              <a href="javascript: void(0);">Compliance</a>
+              <a href="#">Compliance</a>
             </li>
             <li>
-              <a href="javascript: void(0);">Support</a>
+              <a href="#">Support</a>
             </li>
             <li>
-              <a href="javascript: void(0);">Contacts</a>
+              <a href="#">Contacts</a>
             </li>
           </ul>
           <div className="text-gray-4 text-center">© 2019 Mediatec. All rights reserved.</div>

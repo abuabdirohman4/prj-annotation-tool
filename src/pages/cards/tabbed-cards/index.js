@@ -72,11 +72,7 @@ class CardsTabbedCards extends React.Component {
                 </Tabs>
                 <div className="d-inline-flex align-items-center">
                   <Dropdown overlay={dropdownMenu} placement="bottomRight">
-                    <a
-                      className="nav-link dropdown-toggle"
-                      href="javascript: void(0);"
-                      role="button"
-                    >
+                    <a className="nav-link dropdown-toggle" href="#" role="button">
                       Dropdown
                     </a>
                   </Dropdown>
@@ -101,11 +97,7 @@ class CardsTabbedCards extends React.Component {
                 </Tabs>
                 <div className="d-inline-flex align-items-center">
                   <Dropdown overlay={dropdownMenu} placement="bottomRight">
-                    <a
-                      className="nav-link dropdown-toggle"
-                      href="javascript: void(0);"
-                      role="button"
-                    >
+                    <a className="nav-link dropdown-toggle" href="#" role="button">
                       Dropdown
                     </a>
                   </Dropdown>
@@ -129,7 +121,7 @@ class CardsTabbedCards extends React.Component {
                 <Tabs defaultActiveKey="1" className="air-tabs-pills">
                   <TabPane
                     tab={
-                      <a className="nav-link" href="javascript: void(0);">
+                      <a className="nav-link" href="#">
                         History
                       </a>
                     }
@@ -137,7 +129,7 @@ class CardsTabbedCards extends React.Component {
                   />
                   <TabPane
                     tab={
-                      <a className="nav-link" href="javascript: void(0);">
+                      <a className="nav-link" href="#">
                         Information
                       </a>
                     }
@@ -145,7 +137,7 @@ class CardsTabbedCards extends React.Component {
                   />
                   <TabPane
                     tab={
-                      <a className="nav-link" href="javascript: void(0);">
+                      <a className="nav-link" href="#">
                         Actions
                       </a>
                     }
@@ -214,11 +206,7 @@ class CardsTabbedCards extends React.Component {
                 </Tabs>
                 <div className="d-inline-flex align-items-center">
                   <Dropdown overlay={dropdownMenu} placement="bottomRight">
-                    <a
-                      className="nav-link dropdown-toggle"
-                      href="javascript: void(0);"
-                      role="button"
-                    >
+                    <a className="nav-link dropdown-toggle" href="#" role="button">
                       Dropdown
                     </a>
                   </Dropdown>

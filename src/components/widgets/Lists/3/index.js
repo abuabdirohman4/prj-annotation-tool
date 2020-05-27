@@ -7,7 +7,7 @@ class List3 extends React.Component {
       <div>
         <ul className="list-unstyled">
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={`${style.itemMeta} font-weight-bold text-danger`}>
                 2:28
                 <br />
@@ -24,7 +24,7 @@ class List3 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={`${style.itemMeta} font-weight-bold text-blue`}>
                 1:02
                 <br />
@@ -41,7 +41,7 @@ class List3 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={`${style.itemMeta} font-weight-bold`}>
                 2:28
                 <br />
@@ -58,7 +58,7 @@ class List3 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={`${style.itemMeta} font-weight-bold`}>
                 2:28
                 <br />
@@ -75,7 +75,7 @@ class List3 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={`${style.itemMeta} font-weight-bold`}>
                 2:28
                 <br />
@@ -92,7 +92,7 @@ class List3 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={`${style.itemMeta} font-weight-bold`}>
                 2:28
                 <br />

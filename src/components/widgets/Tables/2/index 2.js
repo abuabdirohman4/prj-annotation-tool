@@ -24,7 +24,7 @@ const columns = [
     className: 'text-right bg-transparent',
     render: text => {
       return (
-        <a href="javascript: void(0);" className="text-blue">
+        <a href="#" className="text-blue">
           {text}
         </a>
       )
@@ -50,7 +50,7 @@ class Table2 extends React.Component {
           <button type="button" className="btn btn-primary mr-2 mb-2">
             Save
           </button>
-          <a href="javascript: void(0);" className="btn btn-link mb-2">
+          <a href="#" className="btn btn-link mb-2">
             Cancel
           </a>
         </div>

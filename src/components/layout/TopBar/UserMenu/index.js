@@ -52,14 +52,14 @@ class ProfileMenu extends React.Component {
         </Menu.Item>
         <Menu.Divider />
         <Menu.Item>
-          <a href="javascript: void(0);">
+          <a href="#">
             <i className={`${styles.menuIcon} fe fe-user`} />
             Edit Profile
           </a>
         </Menu.Item>
         <Menu.Divider />
         <Menu.Item>
-          <a href="javascript: void(0);" onClick={this.logout}>
+          <a href="#" onClick={this.logout}>
             <i className={`${styles.menuIcon} fe fe-log-out`} />
             Logout
           </a>

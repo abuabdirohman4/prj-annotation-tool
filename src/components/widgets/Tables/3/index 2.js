@@ -58,7 +58,7 @@ const columns = [
     className: 'bg-transparent',
     render: text => {
       return (
-        <a href="javascript: void(0);" className="text-blue">
+        <a href="#" className="text-blue">
           {text}
         </a>
       )
@@ -92,7 +92,7 @@ class Table3 extends React.Component {
           <TabPane
             tab={
               <Dropdown overlay={dropdownMenu} placement="bottomRight">
-                <a className="nav-link dropdown-toggle" href="javascript: void(0);" role="button">
+                <a className="nav-link dropdown-toggle" href="#" role="button">
                   Dropdown
                 </a>
               </Dropdown>

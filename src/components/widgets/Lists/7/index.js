@@ -7,7 +7,7 @@ class List7 extends React.Component {
       <div>
         <ul className={`${style.list} list-unstyled`}>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={style.itemMeta}>
                 <div className="air__utils__donut air__utils__donut--gray-2 air__utils__donut--md" />
               </div>
@@ -22,7 +22,7 @@ class List7 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={style.itemMeta}>
                 <div className="air__utils__donut air__utils__donut--success air__utils__donut--md" />
               </div>
@@ -37,7 +37,7 @@ class List7 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={style.itemMeta}>
                 <div className="air__utils__donut air__utils__donut--danger air__utils__donut--md" />
               </div>
@@ -52,7 +52,7 @@ class List7 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={style.itemMeta}>
                 <div className="air__utils__donut air__utils__donut--gray-2 air__utils__donut--md" />
               </div>
@@ -67,7 +67,7 @@ class List7 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={style.itemMeta}>
                 <div className="air__utils__donut air__utils__donut--info air__utils__donut--md" />
               </div>
@@ -82,7 +82,7 @@ class List7 extends React.Component {
             </a>
           </li>
           <li className={style.item}>
-            <a href="javascript: void(0);" className={style.itemLink}>
+            <a href="#" className={style.itemLink}>
               <div className={style.itemMeta}>
                 <div className="air__utils__donut air__utils__donut--gray-2 air__utils__donut--md" />
               </div>

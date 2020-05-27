@@ -39,7 +39,7 @@ class General15 extends React.Component {
               </div>
               <div className="nav-item dropdown">
                 <Dropdown overlay={dropdownMenu} placement="bottomRight">
-                  <a className="nav-link dropdown-toggle pt-sm-0" href="javascript: void(0);">
+                  <a className="nav-link dropdown-toggle pt-sm-0" href="#">
                     Actions
                   </a>
                 </Dropdown>
@@ -50,10 +50,10 @@ class General15 extends React.Component {
               <br /> incididunt ut labore et dolore magna elit
             </div>
             <div className="d-flex flex-wrap justify-content-start align-items-start mb-3">
-              <a className="text-blue mr-3" href="javascript: void(0);">
+              <a className="text-blue mr-3" href="#">
                 <i className="icmn-heart mr-1" /> 61 Likes
               </a>
-              <a className="text-blue mr-3" href="javascript: void(0);">
+              <a className="text-blue mr-3" href="#">
                 <i className="icmn-bubble mr-1" /> 2 Comments
               </a>
             </div>
@@ -73,7 +73,7 @@ class General15 extends React.Component {
                   </div>
                   <div className="nav-item dropdown">
                     <Dropdown overlay={dropdownMenu} placement="bottomRight">
-                      <a className="nav-link dropdown-toggle pt-sm-0" href="javascript: void(0);">
+                      <a className="nav-link dropdown-toggle pt-sm-0" href="#">
                         Actions
                       </a>
                     </Dropdown>
@@ -84,10 +84,10 @@ class General15 extends React.Component {
                   <br /> incididunt ut labore et dolore magna elit
                 </div>
                 <div className="d-flex flex-wrap justify-content-start align-items-start mb-3">
-                  <a className="text-blue mr-3" href="javascript: void(0);">
+                  <a className="text-blue mr-3" href="#">
                     <i className="icmn-heart mr-1" /> 61 Likes
                   </a>
-                  <a className="text-blue mr-3" href="javascript: void(0);">
+                  <a className="text-blue mr-3" href="#">
                     <i className="icmn-bubble mr-1" /> 2 Comments
                   </a>
                 </div>
@@ -109,7 +109,7 @@ class General15 extends React.Component {
                   </div>
                   <div className="nav-item dropdown">
                     <Dropdown overlay={dropdownMenu} placement="bottomRight">
-                      <a className="nav-link dropdown-toggle pt-sm-0" href="javascript: void(0);">
+                      <a className="nav-link dropdown-toggle pt-sm-0" href="#">
                         Actions
                       </a>
                     </Dropdown>
@@ -120,10 +120,10 @@ class General15 extends React.Component {
                   <br /> incididunt ut labore et dolore magna elit
                 </div>
                 <div className="d-flex flex-wrap justify-content-start align-items-start mb-3">
-                  <a className="text-blue mr-3" href="javascript: void(0);">
+                  <a className="text-blue mr-3" href="#">
                     <i className="icmn-heart mr-1" /> 61 Likes
                   </a>
-                  <a className="text-blue mr-3" href="javascript: void(0);">
+                  <a className="text-blue mr-3" href="#">
                     <i className="icmn-bubble mr-1" /> 2 Comments
                   </a>
                 </div>
