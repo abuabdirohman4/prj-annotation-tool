@@ -10,7 +10,7 @@ Instruksi ini akan mambantu anda untuk mendapatkan salinan aplikasi dan menjalan
 
 1. Install node.js terbaru: https://nodejs.org
 2. Install yarn package manager terbaru: https://yarnpkg.com/
-3. Instal python untuk dapat menggunakan python package manager: https://python.org/
+3. Install python untuk dapat menggunakan python package manager: https://python.org/
 4. Install mongoDB: https://www.mongodb.com/try/download/community
 
 ### Installing
@@ -35,8 +35,8 @@ cd flask
 ```
 python3 -m venv venv
 ```
-4. Menginstall Requirement Flask
-Masih di dalam folder flask, install requirement untuk flask
+4. Install Requirement Flask
+* Masih di dalam folder flask, install requirement untuk flask
 ```
 pip install -r requirement.txt
 ```
@@ -48,9 +48,9 @@ pip install -r requirement.txt
 ```
 human-entity-quran-annotation-tool/flask/data
 ```
-* Untuk import file dengan MongoDB Compass dijelaskan di [Import and Export Data](https://docs.mongodb.com/compass/master/import-export/#import-data-into-a-collection)
+* Untuk import file dengan MongoDB Compass dapat dilihat pada [Import and Export Data](https://docs.mongodb.com/compass/master/import-export/#import-data-into-a-collection)
 
-## Running
+### Running
 
 Untuk menjalankaannya anda perlu menyediakan 2 buah terminal, yang pertama untuk menjalankan _flask_ sebagai _backend_-nya dan yang kedua untuk menjalankan _react_ sebagai _frontend_-nya 
 
@@ -58,7 +58,7 @@ Untuk menjalankaannya anda perlu menyediakan 2 buah terminal, yang pertama untuk
 ```
 start-flask run
 ```
-2. Menjalanka react di http://localhost:3000/
+2. Menjalankan react di http://localhost:3000/
 ```
 start-react run
 ```
