@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Select } from 'antd'
+import { Select, Switch } from 'antd'
 import Surah from './data.json'
 import CreateWord from './CreateWord'
 
@@ -10,18 +10,31 @@ class CardsBasicCards extends React.Component {
     super(props)
     this.state = {
       selectValue: 'Choose Surah',
+      checked: false,
+      // suggest: "get_surah2"
     }
     this.word_key = -1
   }
 
-  onChange = selectValue => {
+  onChange = e => {
     this.setState({
-      selectValue,
+      selectValue: e,
     })
   }
 
+  handleCheckClick = () => {
+    const { checked } = this.state
+    console.log(checked)
+    this.setState({
+      checked: !checked,
+      // suggest: "get_surah"
+    })
+    console.log(!checked)
+    // console.log(`Ini suggest ${suggest}`)
+  }
+
   render() {
-    const { selectValue } = this.state
+    const { selectValue, checked } = this.state
 
     return (
       <div>
@@ -48,8 +61,12 @@ class CardsBasicCards extends React.Component {
                     </Select>
                   </div>
                 </div>
+                <Switch checked={checked} onClick={this.handleCheckClick}>
+                  {' '}
+                  Show{' '}
+                </Switch>
               </div>
-              <CreateWord noSurah={selectValue} />
+              <CreateWord getSurah={checked ? 'get_suggest' : 'get_surah'} noSurah={selectValue} />
             </div>
           </div>
         </div>

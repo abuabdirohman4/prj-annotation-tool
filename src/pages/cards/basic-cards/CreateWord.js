@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Word from 'components/quran/Word'
 
-const API = 'http://localhost:5000/API/get_surah/'
+// const API = 'http://localhost:5000/API/get_surah2/'
 export default class CreateWord extends Component {
   constructor(props) {
     super(props)
@@ -10,11 +10,12 @@ export default class CreateWord extends Component {
     }
     this.word_key = -1
     this.noSurah = props.noSurah
+    this.getSurah = props.getSurah
   }
 
   componentDidMount() {
-    console.log('TEST')
-    fetch(API + this.noSurah)
+    // console.log('TEST')
+    fetch(`http://localhost:5000/API/${this.getSurah}/${this.noSurah}`)
       .then(res => res.json())
       .then(res => {
         this.setState({ words: res })
@@ -22,11 +23,11 @@ export default class CreateWord extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { noSurah } = this.props
+    const { noSurah, getSurah } = this.props
 
     if (noSurah !== prevProps.noSurah) {
-      console.log(`${noSurah} | ${prevProps.noSurah}`)
-      fetch(API + noSurah)
+      // console.log(`${noSurah} | ${prevProps.noSurah}`)
+      fetch(`http://localhost:5000/API/${getSurah}/${noSurah}`)
         .then(res => res.json())
         .then(res => {
           this.setState({ words: res })

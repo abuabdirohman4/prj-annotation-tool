@@ -52,7 +52,7 @@ def ungroup(ayats):
 
     return ungrouppedAyats
 
-def classify(patterns, ayats):
+def classify_suggest(patterns, ayats):
 
     # Prepare data
     ayats = group(ayats)
@@ -75,6 +75,34 @@ def classify(patterns, ayats):
                     ayat[wordIndex+patternLength]['CLOSE TAG'] += ')' + str(entityIndex) 
                     # ayat[wordIndex]['OPEN TAG'] += '('
                     # ayat[wordIndex+patternLength]['CLOSE TAG'] += ')'
+                    entityIndex += 1
+        ayatIndex += 1
+
+    return ungroup(ayats)
+
+def classify(patterns, ayats):
+
+    # Prepare data
+    ayats = group(ayats)
+
+    # Rule based logic
+    ayatIndex = 0
+    entityIndex = 0
+
+    for ayat in ayats:
+        for pattern in patterns:
+            patternLength = len(pattern)
+            for wordIndex in range(len(ayat) - patternLength):
+                # Get Array of words based on the pattern length
+                wordTagsArray = []
+                for wordOfArrayIndex in range(patternLength):
+                    wordTagsArray.append(ayat[wordIndex+wordOfArrayIndex]['TAG'])
+                if wordTagsArray == pattern:
+                    # print('found')
+                    # ayat[wordIndex]['OPEN TAG'] += str(entityIndex) + '('
+                    # ayat[wordIndex+patternLength]['CLOSE TAG'] += ')' + str(entityIndex) 
+                    ayat[wordIndex]['OPEN TAG']
+                    ayat[wordIndex+patternLength]['CLOSE TAG']
                     entityIndex += 1
         ayatIndex += 1
 
