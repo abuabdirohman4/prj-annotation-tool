@@ -56,11 +56,11 @@ Untuk menjalankaannya anda perlu menyediakan 2 buah terminal, yang pertama untuk
 
 1. Menjalankan flask di http://localhost:5000/
 ```
-start-flask run
+yarn start-flask
 ```
 2. Menjalankan react di http://localhost:3000/
 ```
-start-react run
+yarn start-react run
 ```
 
 ## Built With
