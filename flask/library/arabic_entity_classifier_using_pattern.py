@@ -8,7 +8,7 @@ import pandas as pd
 def group(ayats):
         
     length = len(ayats)
-    i = 0
+    ayatIndex = 0
 
     grouppedAyats = [[]]
 
@@ -16,15 +16,7 @@ def group(ayats):
     for row in ayats:
 
         # tokenizing location
-        if index < length-1:
-            currentLocation = row["AYAT_NUMBER"]
-            nextLocation = ayats[index+1]['AYAT_NUMBER']
-
-            if index == length-2 or currentLocation != nextLocation:
-                i = i+1
-                grouppedAyats.append([])
-            
-            ayats[index]['AYAT_NUMBER'] = i
+        if index <= length-1:
             
             words = {
                 'OPEN TAG' : '',
@@ -36,7 +28,15 @@ def group(ayats):
                 'CLOSE TAG' : ''
             }
             
-            grouppedAyats[i].append(words)
+            grouppedAyats[ayatIndex].append(words)
+
+            if(index < length-1):
+                currentLocation = row["AYAT_NUMBER"]
+                nextLocation = ayats[index+1]['AYAT_NUMBER']
+
+                if index == length-2 or currentLocation != nextLocation:
+                    ayatIndex += 1
+                    grouppedAyats.append([])
 
         index += 1
         
