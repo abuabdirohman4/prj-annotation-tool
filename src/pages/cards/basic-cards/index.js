@@ -9,7 +9,7 @@ class CardsBasicCards extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectValue: 114,
+      selectValue: 'Choose Surah',
     }
     this.word_key = -1
   }
@@ -41,7 +41,7 @@ class CardsBasicCards extends React.Component {
                       {Surah.map(data => {
                         return (
                           <Option key={data.surahNumber} value={data.surahNumber}>
-                            {data.surahName}
+                            {`${data.surahNumber} - ${data.surahName}`}
                           </Option>
                         )
                       })}

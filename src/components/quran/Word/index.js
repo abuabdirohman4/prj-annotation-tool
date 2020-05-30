@@ -23,7 +23,7 @@ class Word extends React.Component {
   render() {
     const { isHover } = this.state
     if (isHover) {
-      this.wordStyle = { color: 'red', cursor: 'pointer' }
+      this.wordStyle = { color: '#1B55E3', cursor: 'pointer' }
     } else {
       this.wordStyle = { color: 'black' }
     }

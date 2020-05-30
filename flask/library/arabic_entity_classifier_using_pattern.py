@@ -70,9 +70,11 @@ def classify(patterns, ayats):
                 for wordOfArrayIndex in range(patternLength):
                     wordTagsArray.append(ayat[wordIndex+wordOfArrayIndex]['TAG'])
                 if wordTagsArray == pattern:
-                    print('foundd')
+                    # print('found')
                     ayat[wordIndex]['OPEN TAG'] += str(entityIndex) + '('
-                    ayat[wordIndex+patternLength]['CLOSE TAG'] += str(entityIndex) + ')'
+                    ayat[wordIndex+patternLength]['CLOSE TAG'] += ')' + str(entityIndex) 
+                    # ayat[wordIndex]['OPEN TAG'] += '('
+                    # ayat[wordIndex+patternLength]['CLOSE TAG'] += ')'
                     entityIndex += 1
         ayatIndex += 1
 
