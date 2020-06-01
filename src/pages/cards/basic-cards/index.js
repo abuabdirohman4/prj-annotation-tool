@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Select, Switch } from 'antd'
+import { Select, Checkbox } from 'antd'
 import Surah from './data.json'
 import CreateWord from './CreateWord'
 
@@ -11,7 +11,6 @@ class CardsBasicCards extends React.Component {
     this.state = {
       selectValue: 'Choose Surah',
       checked: false,
-      // suggest: "get_surah2"
     }
     this.word_key = -1
   }
@@ -24,13 +23,10 @@ class CardsBasicCards extends React.Component {
 
   handleCheckClick = () => {
     const { checked } = this.state
-    console.log(checked)
     this.setState({
       checked: !checked,
-      // suggest: "get_surah"
     })
-    console.log(!checked)
-    // console.log(`Ini suggest ${suggest}`)
+    // console.log(`ini handleCheckClick ${checked}`)
   }
 
   render() {
@@ -50,7 +46,11 @@ class CardsBasicCards extends React.Component {
               <div className="card-header card-header-flex align-items-center">
                 <div className="d-flex flex-column justify-content-center mr-auto">
                   <div className="mb-0 width-300">
-                    <Select value={selectValue} onChange={this.onChange} style={{ width: 300 }}>
+                    <Select
+                      defaultValue={selectValue}
+                      onChange={this.onChange}
+                      style={{ width: 300 }}
+                    >
                       {Surah.map(data => {
                         return (
                           <Option key={data.surahNumber} value={data.surahNumber}>
@@ -61,10 +61,9 @@ class CardsBasicCards extends React.Component {
                     </Select>
                   </div>
                 </div>
-                <Switch checked={checked} onClick={this.handleCheckClick}>
-                  {' '}
-                  Show{' '}
-                </Switch>
+                <Checkbox checked={checked} onClick={this.handleCheckClick}>
+                  Show Suggestion
+                </Checkbox>
               </div>
               <CreateWord getSurah={checked ? 'get_suggest' : 'get_surah'} noSurah={selectValue} />
             </div>

@@ -57,7 +57,7 @@ class ButtonMethod extends React.Component {
     }
 
     return (
-      <div className="col-xl-4 col-lg-12">
+      <div className="col-lg-6 col-lg-12">
         <Link to={this.link}>
           <div
             className={`card ${this.cardEffect}`}

@@ -20,12 +20,13 @@ export default class CreateWord extends Component {
       .then(res => {
         this.setState({ words: res })
       })
+    console.log(`ini componentDidMount CreateWord`)
   }
 
   componentDidUpdate(prevProps) {
     const { noSurah, getSurah } = this.props
 
-    if (noSurah !== prevProps.noSurah) {
+    if (noSurah !== prevProps.noSurah || getSurah !== prevProps.getSurah) {
       // console.log(`${noSurah} | ${prevProps.noSurah}`)
       fetch(`http://localhost:5000/API/${getSurah}/${noSurah}`)
         .then(res => res.json())
@@ -33,6 +34,7 @@ export default class CreateWord extends Component {
           this.setState({ words: res })
         })
     }
+    console.log(`ini componentDidUpdate CreateWord`)
   }
 
   createWord = word => {

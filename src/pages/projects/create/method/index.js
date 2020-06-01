@@ -34,7 +34,7 @@ class Method extends React.Component {
   }
 
   render() {
-    const { visible, handleOk, handleCancel } = this.state
+    const { visible } = this.state
     return (
       <div>
         <Helmet title="Dashboard: Analytics" />
@@ -52,23 +52,27 @@ class Method extends React.Component {
                     methodName={data.methodName}
                     key={data.id}
                     click={this.showModal}
-                    link="#"
                   />
                 )
               })}
-              <Modal title="Basic Modal" visible={visible} onOk={handleOk} onCancel={handleCancel}>
-                {Data.map(data => {
+              <Modal
+                title="Basic Modal"
+                visible={visible}
+                onOk={this.handleOk}
+                onCancel={this.handleCancel}
+              >
+                BALA BALA
+                {/* {Data.map(data => {
                   return (
                     <ButtonMethod
                       projectName={data.projectName}
                       projectImage={data.projectImage}
                       methodName={data.methodName}
                       key={data.id}
-                      click={this.showModal}
                       link="#"
                     />
                   )
-                })}
+                })} */}
               </Modal>
             </div>
           </div>

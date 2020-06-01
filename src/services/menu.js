@@ -27,9 +27,9 @@ export default async function getMenuData() {
         },
       ],
     },
-    {
-      key: 'Method',
-      url: '/projects/create/method',
-    },
+    // {
+    //   key: 'Method',
+    //   url: '/projects/create/method',
+    // },
   ]
 }
