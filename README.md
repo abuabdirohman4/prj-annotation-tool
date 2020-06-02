@@ -60,7 +60,7 @@ yarn start-flask
 ```
 2. Menjalankan react di http://localhost:3000/
 ```
-yarn start-react run
+yarn start-react
 ```
 
 ## Built With
