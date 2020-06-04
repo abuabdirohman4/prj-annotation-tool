@@ -35,12 +35,16 @@ cd flask
 ```
 python3 -m venv venv
 ```
+* Dan akitivasi virtual environment
+```
+source venv/bin/activate
+```
 4. Install Requirement Flask
 * Masih di dalam folder flask, install requirement untuk flask
 ```
 pip install -r requirements.txt
 ```
-4. Import Database
+5. Import Database
 * Untuk proses import, saya menyarankan menggunakan [MongoDB Compass](https://www.mongodb.com/products/compass) (GUI untuk mongoDB)
 * Buatlah database dengan nama _annotation_tool_
 * Buat juga 2 collection dengan nama _quran_ dan _patterns_
