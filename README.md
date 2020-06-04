@@ -35,7 +35,7 @@ cd flask
 ```
 python3 -m venv venv
 ```
-* Dan akitivasi virtual environment
+* Dan aktivasi virtual environment
 ```
 source venv/bin/activate
 ```
