@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'antd'
 import Word from 'components/quran/Word'
 import _ from 'lodash'
 
@@ -252,20 +253,12 @@ export default class CreateWord extends Component {
   }
 
   render() {
-    const { isHover } = this.state
-    if (isHover) {
-      this.wordStyle = { color: '#1B55E3', cursor: 'pointer' }
-    } else {
-      this.wordStyle = { color: 'black' }
-    }
-
     return (
       <>
         <div
           role="button"
           style={{
             cursor: 'text',
-            // cursor: "pointer",
             color: 'black',
           }}
           tabIndex="0"
@@ -274,18 +267,24 @@ export default class CreateWord extends Component {
         >
           {this.createWords()}
         </div>
-        <button
-          onClick={this.annotate.bind(this)}
-          onKeyDown={this.annotate.bind(this)}
-          tabIndex="-1"
-          type="button"
-          className="btn"
-        >
-          Annotate as human
-        </button>
-        <button onClick={this.resetWords.bind(this)} tabIndex="-1" type="button" className="btn">
-          Clear
-        </button>
+        <div className="text-center">
+          <Button
+            onClick={this.annotate}
+            onKeyDown={this.annotate}
+            tabIndex="-1"
+            type="primary"
+            className="mb-3 ml-3 col-md-1"
+            style={{
+              background: '#786fa4',
+              borderColor: '#786fa4',
+            }}
+          >
+            Annotate
+          </Button>
+          <Button onClick={this.resetWords} tabIndex="-1" className="ml-2">
+            Clear
+          </Button>
+        </div>
       </>
     )
   }

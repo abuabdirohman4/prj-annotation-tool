@@ -22,7 +22,7 @@ Langkah-langkah dalam menginstallnya sebagai berikut :
 ```
 git clone https://github.com/abuabdirohman4/human-entity-quran-annotation-tool.git
 ```
-2. Install node_module, react text annotate dan react powerplug dengan yarn
+2. Install node_module dengan yarn
 ```
 yarn install
 ```
