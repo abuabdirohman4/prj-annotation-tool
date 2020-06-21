@@ -11,14 +11,14 @@ export default async function getMenuData() {
           url: '/create',
         },
         {
+          title: '',
+          key: 'Edit',
+          url: '/edit',
+        },
+        {
           title: 'Open Recent Projects',
           key: 'Recent',
           url: '/recent',
-        },
-        {
-          title: 'Edit Projects',
-          key: 'Edit',
-          url: '/edit',
         },
       ],
     },
