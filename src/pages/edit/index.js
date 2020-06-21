@@ -5,7 +5,7 @@ import Surah from './data.json'
 import CreateWord from './CreateWord'
 
 const { Option } = Select
-class CardsBasicCards extends React.Component {
+class Edit extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -74,4 +74,4 @@ class CardsBasicCards extends React.Component {
   }
 }
 
-export default CardsBasicCards
+export default Edit
