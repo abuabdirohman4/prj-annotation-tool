@@ -1,6 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 import React from 'react'
-import { Table, Divider, Tag } from 'antd'
+import { Table, Tag } from 'antd'
 import { Link } from 'react-router-dom'
 import SurahJson from './surah.json'
 
@@ -25,7 +25,7 @@ const columns = [
           const color = 'geekblue'
           return (
             <Tag color={color} key={tag}>
-              {tag.toUpperCase()}
+              {tag != null ? tag.toUpperCase() : ''}
             </Tag>
           )
         })}
@@ -75,10 +75,10 @@ const columns = [
               },
             }}
           >
-            Open
+            Edit
           </Link>
-          <Divider type="vertical" />
-          <a href="javascript:;">Delete</a>
+          {/* <Divider type="vertical" /> */}
+          {/* <a href="javascript:;">Delete</a> */}
         </span>
       )
     },

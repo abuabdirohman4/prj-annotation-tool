@@ -3,15 +3,15 @@ import React from 'react'
 class Word extends React.Component {
   constructor(props) {
     super(props)
+    this.value = props.value
+    this.color = props.color
     this.validateNewIndex = props.validateNewIndex
     this.addWordToSelected = props.addWordToSelected
     this.setMouseDownStatus = props.setMouseDownStatus
-    this.color = props.color
-    this.index = props.index
     this.setWordColor = props.setWordColor
     this.isMouseDown = props.isMouseDown
+    this.index = props.index
     this.getMouseDownStatus = props.getMouseDownStatus
-    this.value = props.value
     this.toggleHover = this.toggleHover.bind(this)
     this.state = {
       ...this.state,
@@ -24,15 +24,6 @@ class Word extends React.Component {
 
   state = {
     isHover: false,
-    // isClicking: false,
-  }
-
-  componentDidMount() {
-    // console.log(`${this.color}`);
-  }
-
-  componentDidUpdate() {
-    // console.log((`${this.color}`));
   }
 
   toggleHover = function toggleHover() {

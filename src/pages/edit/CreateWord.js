@@ -46,6 +46,7 @@ export default class CreateWord extends Component {
     }
   }
 
+  // Give space between word
   setupWords = () => {
     const { words } = this.state
 
@@ -217,29 +218,31 @@ export default class CreateWord extends Component {
     const wordsToPrint = _.cloneDeep(words)
 
     if (chosenEntities !== '')
-      chosenEntities.forEach((e, k) => {
-        wordsToPrint[e.start].ARAB = `<font color=red>${k.toString().sup()}(</font>${
-          wordsToPrint[e.start].ARAB
-        }`
+      // chosenEntities.forEach((e, k) => {
+      chosenEntities.forEach(e => {
+        // wordsToPrint[e.start].ARAB = `<font color=red>${k.toString().sup()}(</font>${
+        wordsToPrint[e.start].ARAB = `<font color=red>(</font>${wordsToPrint[e.start].ARAB}`
         wordsToPrint[e.end].ARAB = `${
           wordsToPrint[e.end].ARAB
-        }<font color=red>)${k.toString().sup()}</font>`
+          // }<font color=red>)${k.toString().sup()}</font>`
+        }<font color=red>)</font>`
       })
 
     if (showSuggestions)
-      entitySuggestions.forEach((e, k) => {
+      // entitySuggestions.forEach((e, k) => {
+      entitySuggestions.forEach(e => {
         if (
           chosenEntities.find(e2 => e2.start === e.start) &&
           chosenEntities.find(e2 => e2.end === e.end)
         )
           return
 
-        wordsToPrint[e.start].ARAB = `<font color=green>${k.toString().sup()}(</font>${
-          wordsToPrint[e.start].ARAB
-        }`
+        // wordsToPrint[e.start].ARAB = `<font color=green>${k.toString().sup()}(</font>${
+        wordsToPrint[e.start].ARAB = `<font color=green>(</font>${wordsToPrint[e.start].ARAB}`
         wordsToPrint[e.end].ARAB = `${
           wordsToPrint[e.end].ARAB
-        }<font color=green>)${k.toString().sup()}</font>`
+          // }<font color=green>)${k.toString().sup()}</font>`
+        }<font color=green>)</font>`
       })
 
     console.log(wordsToPrint)
@@ -270,7 +273,7 @@ export default class CreateWord extends Component {
         <div className="text-center">
           <Button
             onClick={this.annotate}
-            onKeyDown={this.annotate}
+            // onKeyDown={this.annotate}
             tabIndex="-1"
             type="primary"
             className="mb-3 ml-3 col-md-1"

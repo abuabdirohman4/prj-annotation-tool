@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Checkbox, Button } from 'antd'
-import { useParams, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import CreateWord from './CreateWord'
 
 export default class Edit extends React.Component {
@@ -12,13 +12,12 @@ export default class Edit extends React.Component {
       checked: false,
     }
     this.word_key = -1
-    console.log('Constructor')
-    console.log(useParams)
+    // console.log('Constructor')
+    // console.log(useParams)
   }
 
   componentDidMount() {
-    console.log(this.props)
-
+    // console.log(this.props)
     const {
       location: { state: { projectID } = { projectID: undefined } },
     } = this.props
@@ -30,6 +29,7 @@ export default class Edit extends React.Component {
           this.setState({
             projectData: res[0],
           })
+          console.log('RES: ')
           console.log(res)
         })
   }
@@ -49,8 +49,8 @@ export default class Edit extends React.Component {
       },
       checked,
     } = this.state
-    const { projectData } = this.state
-    console.log(`projectData: ${projectData}`)
+    // const { projectData } = this.state
+    // console.log(`projectData: ${projectData}`)
     return (
       <div>
         <Helmet title="Al Quran" />
