@@ -65,6 +65,7 @@ def save_project():
 
     projectID = request.json['projectID']
     chosenEntities = request.json['chosenEntities']
+    # tagName = request.json['tagName']
 
     print(projectID)
 
@@ -72,6 +73,7 @@ def save_project():
         {'_id': ObjectId(projectID)},
         {'$set':
             {
+                # "tagName": tagName,
                 "chosenEntities": chosenEntities
             }
          }

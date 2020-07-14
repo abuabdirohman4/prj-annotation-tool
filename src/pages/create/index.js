@@ -100,7 +100,7 @@ class Create extends React.Component {
     return (
       <div>
         {this.renderRedirect()}
-        <Helmet title="Dashboard: Analytics" />
+        <Helmet title="Create Projects" />
         <div className="air__utils__heading">
           <h5>Create New Projects</h5>
         </div>

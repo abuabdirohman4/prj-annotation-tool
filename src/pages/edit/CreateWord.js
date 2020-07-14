@@ -4,7 +4,10 @@ import Word from 'components/quran/Word'
 import _ from 'lodash'
 
 const API = 'http://localhost:5000/API/get_surah/'
-
+const tagColor = {
+  Human: 'blue',
+  Location: 'red',
+}
 export default class CreateWord extends Component {
   constructor(props) {
     super(props)
@@ -14,9 +17,11 @@ export default class CreateWord extends Component {
       chosenEntities: [],
       isMouseDown: false,
       entitySuggestions: [],
+      // tagName: props.tagName,
     }
     this.word_key = -1
     this.noSurah = props.noSurah
+    this.tagName = props.tagName
   }
 
   componentDidUpdate(prevProps) {
@@ -100,6 +105,9 @@ export default class CreateWord extends Component {
     const wordsCopy = words.slice()
 
     wordsCopy[index].COLOR = color
+    // wordsCopy[index].COLOR = tagColor[this.tagName]
+    // console.log('wordsCopy[index].COLOR : ', wordsCopy[index].COLOR)
+    // console.log('this.tagName : ', this.tagName)
 
     this.setState({
       words: wordsCopy,
@@ -141,7 +149,7 @@ export default class CreateWord extends Component {
       word.COLOR = ''
     })
 
-    console.log(entitySuggestions)
+    console.log('entity Suggestion', entitySuggestions)
 
     this.setState({
       words: wordsCopy,
@@ -151,6 +159,7 @@ export default class CreateWord extends Component {
 
   annotate = () => {
     const { currentSelectedWords, chosenEntities } = this.state
+    const { tagName } = this.props
 
     if (currentSelectedWords.length === 0) return
 
@@ -159,7 +168,11 @@ export default class CreateWord extends Component {
     newChosenEntities.push({
       start: Math.min.apply(null, currentSelectedWords),
       end: Math.max.apply(null, currentSelectedWords) + 1,
+      tagName,
+      tagColor: tagColor[tagName],
     })
+
+    console.log('newChosenEntities : ', newChosenEntities)
 
     this.setState(
       {
@@ -183,6 +196,7 @@ export default class CreateWord extends Component {
       },
       body: JSON.stringify({
         projectID,
+        // tagName,
         chosenEntities,
       }),
     }).then(res => {
@@ -198,6 +212,7 @@ export default class CreateWord extends Component {
       <Word
         value={word.ARAB}
         color={word.COLOR}
+        // tagName={this.tagName}
         validateNewIndex={this.validateNewIndex}
         addWordToSelected={this.addWordToSelected}
         setMouseDownStatus={this.setMouseDownStatus}
@@ -218,15 +233,15 @@ export default class CreateWord extends Component {
     const wordsToPrint = _.cloneDeep(words)
 
     if (chosenEntities !== '')
-      // chosenEntities.forEach((e, k) => {
       chosenEntities.forEach(e => {
-        // wordsToPrint[e.start].ARAB = `<font color=red>${k.toString().sup()}(</font>${
-        wordsToPrint[e.start].ARAB = `<font color=red>(</font>${wordsToPrint[e.start].ARAB}`
-        wordsToPrint[e.end].ARAB = `${
-          wordsToPrint[e.end].ARAB
-          // }<font color=red>)${k.toString().sup()}</font>`
-        }<font color=red>)</font>`
+        wordsToPrint[
+          e.start
+        ].ARAB = `<font color=${e.tagColor}>(</font>${wordsToPrint[e.start].ARAB}`
+        wordsToPrint[e.end].ARAB = `${wordsToPrint[e.end].ARAB}<font color=${e.tagColor}>)</font>`
       })
+    // chosenEntities.forEach((e, k) => {
+    // wordsToPrint[e.start].ARAB = `<font color=red>${k.toString().sup()}(</font>${
+    // }<font color=red>)${k.toString().sup()}</font>`
 
     if (showSuggestions)
       // entitySuggestions.forEach((e, k) => {
@@ -237,12 +252,10 @@ export default class CreateWord extends Component {
         )
           return
 
-        // wordsToPrint[e.start].ARAB = `<font color=green>${k.toString().sup()}(</font>${
         wordsToPrint[e.start].ARAB = `<font color=green>(</font>${wordsToPrint[e.start].ARAB}`
-        wordsToPrint[e.end].ARAB = `${
-          wordsToPrint[e.end].ARAB
-          // }<font color=green>)${k.toString().sup()}</font>`
-        }<font color=green>)</font>`
+        wordsToPrint[e.end].ARAB = `${wordsToPrint[e.end].ARAB}<font color=green>)</font>`
+        // wordsToPrint[e.start].ARAB = `<font color=green>${k.toString().sup()}(</font>${
+        // }<font color=green>)${k.toString().sup()}</font>`
       })
 
     console.log(wordsToPrint)
@@ -250,7 +263,6 @@ export default class CreateWord extends Component {
     return wordsToPrint.map((word, k) => {
       // word.COLOR = 'green'
       word.INDEX = k
-
       return this.createWord(word)
     })
   }
@@ -276,7 +288,7 @@ export default class CreateWord extends Component {
             // onKeyDown={this.annotate}
             tabIndex="-1"
             type="primary"
-            className="mb-3 ml-3 col-md-1"
+            className="mb-3 ml-3"
             // style={{
             //   background: '#786fa4',
             //   borderColor: '#786fa4',
