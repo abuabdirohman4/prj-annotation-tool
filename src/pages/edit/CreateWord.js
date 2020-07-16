@@ -17,7 +17,7 @@ export default class CreateWord extends Component {
       chosenEntities: [],
       isMouseDown: false,
       entitySuggestions: [],
-      // tagName: props.tagName,
+      tag: props.tagName,
     }
     this.word_key = -1
     this.noSurah = props.noSurah
@@ -25,9 +25,9 @@ export default class CreateWord extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { noSurah, chosenEntities } = this.props
+    const { noSurah, chosenEntities, tagName } = this.props
 
-    if (noSurah !== prevProps.noSurah) {
+    if (noSurah !== prevProps.noSurah || tagName !== prevProps.tagName) {
       fetch(API + noSurah)
         .then(res => res.json())
         .then(res => {
@@ -39,6 +39,7 @@ export default class CreateWord extends Component {
               this.setState(
                 {
                   chosenEntities,
+                  tag: tagName,
                 },
                 () => {
                   this.setupWords()
@@ -91,7 +92,7 @@ export default class CreateWord extends Component {
   }
 
   setMouseDownStatus = status => {
-    console.log('setMouseDownStatus called')
+    // console.log('setMouseDownStatus called')
 
     this.setState({
       isMouseDown: status,
@@ -100,14 +101,14 @@ export default class CreateWord extends Component {
     if (status) this.resetWords()
   }
 
-  setWordColor = (index, color) => {
-    const { words } = this.state
+  setWordColor = index => {
+    const { words, tag } = this.state
     const wordsCopy = words.slice()
 
-    wordsCopy[index].COLOR = color
-    // wordsCopy[index].COLOR = tagColor[this.tagName]
+    // wordsCopy[index].COLOR = color
     // console.log('wordsCopy[index].COLOR : ', wordsCopy[index].COLOR)
-    // console.log('this.tagName : ', this.tagName)
+    wordsCopy[index].COLOR = tagColor[tag]
+    console.log('this.tagName : ', tag)
 
     this.setState({
       words: wordsCopy,
@@ -142,14 +143,15 @@ export default class CreateWord extends Component {
   }
 
   resetWords = () => {
-    const { words, entitySuggestions } = this.state
+    // const { words, entitySuggestions } = this.state
+    const { words } = this.state
     const wordsCopy = words.slice()
 
     wordsCopy.forEach(word => {
       word.COLOR = ''
     })
 
-    console.log('entity Suggestion', entitySuggestions)
+    // console.log('entity Suggestion', entitySuggestions)
 
     this.setState({
       words: wordsCopy,
@@ -166,8 +168,10 @@ export default class CreateWord extends Component {
     const newChosenEntities = _.cloneDeep(chosenEntities)
 
     newChosenEntities.push({
-      start: Math.min.apply(null, currentSelectedWords),
-      end: Math.max.apply(null, currentSelectedWords) + 1,
+      // start: Math.min.apply(null, currentSelectedWords),
+      // end: Math.max.apply(null, currentSelectedWords) + 1,
+      start: Math.min.apply(null, currentSelectedWords) - 1,
+      end: Math.max.apply(null, currentSelectedWords),
       tagName,
       tagColor: tagColor[tagName],
     })
@@ -196,7 +200,6 @@ export default class CreateWord extends Component {
       },
       body: JSON.stringify({
         projectID,
-        // tagName,
         chosenEntities,
       }),
     }).then(res => {
@@ -227,6 +230,7 @@ export default class CreateWord extends Component {
   createWords = () => {
     const { words, chosenEntities, entitySuggestions } = this.state
     const { showSuggestions } = this.props
+    // < i className = "lnr lnr-cross-circle" > </>
 
     if (words.length === 0) return ''
 
@@ -237,6 +241,7 @@ export default class CreateWord extends Component {
         wordsToPrint[
           e.start
         ].ARAB = `<font color=${e.tagColor}>(</font>${wordsToPrint[e.start].ARAB}`
+        // `<sup><i class="fa fa-times-circle-o" style="font-size: 16px;"></i></sup><font color=${e.tagColor}>(</font>${wordsToPrint[e.start].ARAB}`
         wordsToPrint[e.end].ARAB = `${wordsToPrint[e.end].ARAB}<font color=${e.tagColor}>)</font>`
       })
     // chosenEntities.forEach((e, k) => {
@@ -267,7 +272,16 @@ export default class CreateWord extends Component {
     })
   }
 
+  handleChange = tag => {
+    this.setState({
+      tag,
+    })
+  }
+
   render() {
+    const { tag } = this.state
+    const { tagName } = this.props
+
     return (
       <>
         <div
@@ -281,18 +295,16 @@ export default class CreateWord extends Component {
           className="card-body card-quran text-right"
         >
           {this.createWords()}
+          {console.log('value TagName', tag)}
+          {console.log('value Tag2', tagName)}
         </div>
         <div className="text-center">
           <Button
             onClick={this.annotate}
-            // onKeyDown={this.annotate}
+            onKeyDown={this.annotate}
             tabIndex="-1"
             type="primary"
             className="mb-3 ml-3"
-            // style={{
-            //   background: '#786fa4',
-            //   borderColor: '#786fa4',
-            // }}
           >
             Annotate
           </Button>

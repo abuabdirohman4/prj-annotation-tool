@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Table from './table'
+import Table from './table/index'
 
 class Recent extends React.Component {
   render() {

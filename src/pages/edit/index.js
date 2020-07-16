@@ -24,7 +24,8 @@ export default class Edit extends React.Component {
     } = this.props
 
     if (projectID !== undefined)
-      fetch(`http://localhost:5000/API/get_project?project_id=${projectID}`)
+      // fetch(`http://localhost:5000/API/get_project?project_id=${projectID}`)
+      fetch(`http://localhost:5000/API/get_project/${projectID}`)
         .then(res => res.json())
         .then(res => {
           this.setState({
@@ -103,7 +104,7 @@ export default class Edit extends React.Component {
                         col
                       </span>
                     </Select.Option>
-                    {console.log('value TagName', tagName)}
+                    {/* {console.log('value TagName', tagName)} */}
                   </Select>
                 </div>
               </div>

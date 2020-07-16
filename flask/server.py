@@ -1,5 +1,4 @@
-from flask import Flask, jsonify
-from flask import request
+from flask import Flask, jsonify, json, g, request
 from flask_cors import CORS
 from flask_pymongo import PyMongo, ObjectId
 from bson.json_util import dumps
@@ -15,7 +14,6 @@ app.config['MONGO_URI'] = "mongodb://127.0.0.1:27017/annotation_tool"
 CORS(app)
 
 mongo = PyMongo(app)
-
 
 @app.route('/API/get_surah/<surah_number>')
 def get_surah(surah_number):
@@ -48,10 +46,10 @@ def new_project():
     return dumps(query)
 
 
-@app.route('/API/get_project')
-def get_project():
+@app.route('/API/get_project/<project_id>')
+def get_project(project_id):
 
-    project_id = request.args.get('project_id')
+    # project_id = request.args.get('project_id')
 
     project_data = mongo.db.projects.find({'_id': ObjectId(project_id)})
 
@@ -65,7 +63,6 @@ def save_project():
 
     projectID = request.json['projectID']
     chosenEntities = request.json['chosenEntities']
-    # tagName = request.json['tagName']
 
     print(projectID)
 
@@ -73,7 +70,6 @@ def save_project():
         {'_id': ObjectId(projectID)},
         {'$set':
             {
-                # "tagName": tagName,
                 "chosenEntities": chosenEntities
             }
          }
@@ -92,6 +88,20 @@ def get_projects():
 
     projects = mongo.db.projects.find(
         {"projectAnnotator": {
+            "$ne": ""
+        }
+        })
+
+    return dumps(projects)
+
+
+@app.route('/API/delete_project/<project_id>', methods=['delete'])
+def delete(project_id):
+
+    query = mongo.db.projects.delete_one({'_id': ObjectId(project_id)})
+    print(query)
+    projects = mongo.db.projects.find(
+        {"_id": {
             "$ne": ""
         }
         })

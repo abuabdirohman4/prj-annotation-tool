@@ -1,15 +1,16 @@
 import React from 'react'
 
 // const tagColor = {
-//   Human: 'red',
-//   Location: 'blue',
+//   Human: 'blue',
+//   Location: 'red',
 // }
+
 class Word extends React.Component {
   constructor(props) {
     super(props)
     this.value = props.value
     this.color = props.color
-    this.tagName = props.tagName
+    // this.tagName = props.tagName
     this.validateNewIndex = props.validateNewIndex
     this.addWordToSelected = props.addWordToSelected
     this.setMouseDownStatus = props.setMouseDownStatus
@@ -44,8 +45,10 @@ class Word extends React.Component {
     const isValid = this.validateNewIndex(this.index)
 
     if (isHover && isMouseDown && isValid) {
-      this.setWordColor(this.index, '#786fa4')
-      console.log('color : ', this.color)
+      // this.setWordColor(this.index, '#786fa4')
+      // this.setWordColor(this.index, '#1b55e3')
+      this.setWordColor(this.index, this.color)
+      // console.log('Color : ', this.color)
       // console.log('Tag Color : ', tagColor[this.tagName])
       // console.log('Tag Name : ', this.tagName)
       this.addWordToSelected(this.index)
