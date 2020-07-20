@@ -50,7 +50,6 @@ def new_project():
 def get_project(project_id):
 
     # project_id = request.args.get('project_id')
-
     project_data = mongo.db.projects.find({'_id': ObjectId(project_id)})
 
     return dumps(project_data)

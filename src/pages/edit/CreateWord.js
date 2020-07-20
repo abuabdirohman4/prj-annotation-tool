@@ -12,22 +12,32 @@ export default class CreateWord extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      words: [],
       currentSelectedWords: [],
       chosenEntities: [],
-      isMouseDown: false,
       entitySuggestions: [],
+      isMouseDown: false,
       tag: props.tagName,
+      words: [],
     }
-    this.word_key = -1
+    // this.props = {
+    //   // chosenEntities: props.chosenEntities
+    //   noSurah: props.noSurah,
+    //   tagName: props.tagName,
+    // }
     this.noSurah = props.noSurah
     this.tagName = props.tagName
+    this.word_key = -1
+    console.log(`chosenEntities CreateWord: ${this.chosenEntities}`)
   }
 
   componentDidUpdate(prevProps) {
     const { noSurah, chosenEntities, tagName } = this.props
 
-    if (noSurah !== prevProps.noSurah || tagName !== prevProps.tagName) {
+    if (tagName !== prevProps.tagName) {
+      this.updateTag(tagName)
+    }
+
+    if (noSurah !== prevProps.noSurah) {
       fetch(API + noSurah)
         .then(res => res.json())
         .then(res => {
@@ -39,7 +49,6 @@ export default class CreateWord extends Component {
               this.setState(
                 {
                   chosenEntities,
-                  tag: tagName,
                 },
                 () => {
                   this.setupWords()
@@ -50,6 +59,12 @@ export default class CreateWord extends Component {
           )
         })
     }
+  }
+
+  updateTag = tag => {
+    this.setState({
+      tag,
+    })
   }
 
   // Give space between word
@@ -91,146 +106,9 @@ export default class CreateWord extends Component {
     this.setState({ entitySuggestions })
   }
 
-  setMouseDownStatus = status => {
-    // console.log('setMouseDownStatus called')
-
-    this.setState({
-      isMouseDown: status,
-    })
-
-    if (status) this.resetWords()
-  }
-
-  setWordColor = index => {
-    const { words, tag } = this.state
-    const wordsCopy = words.slice()
-
-    // wordsCopy[index].COLOR = color
-    // console.log('wordsCopy[index].COLOR : ', wordsCopy[index].COLOR)
-    wordsCopy[index].COLOR = tagColor[tag]
-    console.log('this.tagName : ', tag)
-
-    this.setState({
-      words: wordsCopy,
-    })
-  }
-
-  addWordToSelected = index => {
-    const { currentSelectedWords } = this.state
-    const newcurrentSelectedWords = currentSelectedWords.slice()
-    newcurrentSelectedWords.push(index)
-    this.setState({
-      currentSelectedWords: newcurrentSelectedWords,
-    })
-  }
-
-  validateNewIndex = index => {
-    const { currentSelectedWords } = this.state
-    const newcurrentSelectedWords = currentSelectedWords.slice()
-    newcurrentSelectedWords.push(index)
-
-    if (newcurrentSelectedWords.length > 0) {
-      newcurrentSelectedWords.sort()
-
-      for (let i = 0; i < newcurrentSelectedWords.length; i += 1) {
-        if (i > 0) {
-          if (newcurrentSelectedWords[i] - newcurrentSelectedWords[i - 1] > 1) return false
-        }
-      }
-    }
-
-    return true
-  }
-
-  resetWords = () => {
-    // const { words, entitySuggestions } = this.state
-    const { words } = this.state
-    const wordsCopy = words.slice()
-
-    wordsCopy.forEach(word => {
-      word.COLOR = ''
-    })
-
-    // console.log('entity Suggestion', entitySuggestions)
-
-    this.setState({
-      words: wordsCopy,
-      currentSelectedWords: [],
-    })
-  }
-
-  annotate = () => {
-    const { currentSelectedWords, chosenEntities } = this.state
-    const { tagName } = this.props
-
-    if (currentSelectedWords.length === 0) return
-
-    const newChosenEntities = _.cloneDeep(chosenEntities)
-
-    newChosenEntities.push({
-      // start: Math.min.apply(null, currentSelectedWords),
-      // end: Math.max.apply(null, currentSelectedWords) + 1,
-      start: Math.min.apply(null, currentSelectedWords) - 1,
-      end: Math.max.apply(null, currentSelectedWords),
-      tagName,
-      tagColor: tagColor[tagName],
-    })
-
-    console.log('newChosenEntities : ', newChosenEntities)
-
-    this.setState(
-      {
-        chosenEntities: newChosenEntities,
-      },
-      this.saveChosenEntities,
-    )
-
-    this.resetWords()
-  }
-
-  saveChosenEntities = () => {
-    const { chosenEntities } = this.state
-    const { projectID } = this.props
-
-    fetch('http://localhost:5000/API/save_project', {
-      method: 'post',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        projectID,
-        chosenEntities,
-      }),
-    }).then(res => {
-      if (res === 'success') console.log('success')
-    })
-  }
-
-  createWord = word => {
-    const { isMouseDown } = this.state
-    this.word_key += 1
-
-    return (
-      <Word
-        value={word.ARAB}
-        color={word.COLOR}
-        // tagName={this.tagName}
-        validateNewIndex={this.validateNewIndex}
-        addWordToSelected={this.addWordToSelected}
-        setMouseDownStatus={this.setMouseDownStatus}
-        setWordColor={this.setWordColor}
-        index={word.INDEX}
-        key={this.word_key}
-        isMouseDown={isMouseDown}
-      />
-    )
-  }
-
   createWords = () => {
     const { words, chosenEntities, entitySuggestions } = this.state
     const { showSuggestions } = this.props
-    // < i className = "lnr lnr-cross-circle" > </>
 
     if (words.length === 0) return ''
 
@@ -263,25 +141,152 @@ export default class CreateWord extends Component {
         // }<font color=green>)${k.toString().sup()}</font>`
       })
 
-    console.log(wordsToPrint)
+    console.log('createWords : ', wordsToPrint)
 
     return wordsToPrint.map((word, k) => {
-      // word.COLOR = 'green'
       word.INDEX = k
       return this.createWord(word)
     })
   }
 
-  handleChange = tag => {
+  createWord = word => {
+    const { isMouseDown } = this.state
+    this.word_key += 1
+
+    return (
+      <Word
+        value={word.ARAB}
+        color={word.COLOR}
+        // tagName={this.tagName}
+        validateNewIndex={this.validateNewIndex}
+        addWordToSelected={this.addWordToSelected}
+        setMouseDownStatus={this.setMouseDownStatus}
+        setWordColor={this.setWordColor}
+        index={word.INDEX}
+        key={this.word_key}
+        isMouseDown={isMouseDown}
+      />
+    )
+  }
+
+  validateNewIndex = index => {
+    const { currentSelectedWords } = this.state
+    const newcurrentSelectedWords = currentSelectedWords.slice()
+    newcurrentSelectedWords.push(index)
+
+    if (newcurrentSelectedWords.length > 0) {
+      newcurrentSelectedWords.sort()
+
+      for (let i = 0; i < newcurrentSelectedWords.length; i += 1) {
+        if (i > 0) {
+          if (newcurrentSelectedWords[i] - newcurrentSelectedWords[i - 1] > 1) return false
+        }
+      }
+    }
+
+    return true
+  }
+
+  addWordToSelected = index => {
+    const { currentSelectedWords } = this.state
+    const newcurrentSelectedWords = currentSelectedWords.slice()
+    newcurrentSelectedWords.push(index)
     this.setState({
-      tag,
+      currentSelectedWords: newcurrentSelectedWords,
+    })
+  }
+
+  setMouseDownStatus = status => {
+    // console.log('setMouseDownStatus called')
+
+    this.setState({
+      isMouseDown: status,
+    })
+
+    if (status) this.resetWords()
+  }
+
+  resetWords = () => {
+    // const { words, entitySuggestions } = this.state
+    const { words } = this.state
+    const wordsCopy = words.slice()
+
+    wordsCopy.forEach(word => {
+      word.COLOR = ''
+    })
+
+    // console.log('entity Suggestion', entitySuggestions)
+
+    this.setState({
+      words: wordsCopy,
+      currentSelectedWords: [],
+    })
+  }
+
+  setWordColor = index => {
+    const { words, tag } = this.state
+    const wordsCopy = words.slice()
+
+    // wordsCopy[index].COLOR = color
+    // console.log('wordsCopy[index].COLOR : ', wordsCopy[index].COLOR)
+    // console.log('this.tagName : ', tag)
+    wordsCopy[index].COLOR = tagColor[tag]
+
+    this.setState({
+      words: wordsCopy,
+    })
+  }
+
+  annotate = () => {
+    const { currentSelectedWords, chosenEntities } = this.state
+    const { tagName } = this.props
+
+    if (currentSelectedWords.length === 0) return
+
+    const newChosenEntities = _.cloneDeep(chosenEntities)
+
+    newChosenEntities.push({
+      // start: Math.min.apply(null, currentSelectedWords),
+      // end: Math.max.apply(null, currentSelectedWords) + 1,
+      start: Math.min.apply(null, currentSelectedWords) - 1,
+      end: Math.max.apply(null, currentSelectedWords),
+      tagName,
+      tagColor: tagColor[tagName],
+    })
+
+    // console.log('newChosenEntities : ', newChosenEntities)
+
+    this.setState(
+      {
+        chosenEntities: newChosenEntities,
+      },
+      this.saveChosenEntities,
+    )
+
+    this.resetWords()
+    console.log(`chosenEntities CreateWord 2: ${this.chosenEntities}`)
+  }
+
+  saveChosenEntities = () => {
+    const { chosenEntities } = this.state
+    const { projectID } = this.props
+
+    fetch('http://localhost:5000/API/save_project', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        projectID,
+        chosenEntities,
+      }),
+    }).then(res => {
+      if (res === 'success') console.log('success')
     })
   }
 
   render() {
-    const { tag } = this.state
-    const { tagName } = this.props
-
     return (
       <>
         <div
@@ -295,8 +300,6 @@ export default class CreateWord extends Component {
           className="card-body card-quran text-right"
         >
           {this.createWords()}
-          {console.log('value TagName', tag)}
-          {console.log('value Tag2', tagName)}
         </div>
         <div className="text-center">
           <Button

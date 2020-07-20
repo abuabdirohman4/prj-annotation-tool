@@ -45,12 +45,7 @@ class Word extends React.Component {
     const isValid = this.validateNewIndex(this.index)
 
     if (isHover && isMouseDown && isValid) {
-      // this.setWordColor(this.index, '#786fa4')
-      // this.setWordColor(this.index, '#1b55e3')
       this.setWordColor(this.index, this.color)
-      // console.log('Color : ', this.color)
-      // console.log('Tag Color : ', tagColor[this.tagName])
-      // console.log('Tag Name : ', this.tagName)
       this.addWordToSelected(this.index)
     }
   }

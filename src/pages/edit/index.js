@@ -18,9 +18,13 @@ export default class Edit extends React.Component {
   }
 
   componentDidMount() {
-    // console.log(this.props)
+    // console.log('componentDidMount')
     const {
-      location: { state: { projectID } = { projectID: undefined } },
+      location: {
+        state: { projectID } = {
+          projectID: undefined,
+        },
+      },
     } = this.props
 
     if (projectID !== undefined)
@@ -52,14 +56,22 @@ export default class Edit extends React.Component {
 
   render() {
     const {
-      projectData: { chosenEntities, surahNumber, _id: { $oid } = { $oid: null } } = {
-        surah_number: null,
+      projectData: {
+        chosenEntities,
+        surahNumber,
+        _id: { $oid } = {
+          $oid: null,
+        },
+      } = {
+        surahNumber: null,
       },
       checked,
       tagName,
     } = this.state
     // const { projectData } = this.state
-    // console.log(`projectData: ${projectData}`)
+    // console.log(`oid: ${$oid}`)
+    // console.log(`chosenEntities index: ${chosenEntities}`)
+
     return (
       <div>
         <Helmet title="Edit Projects" />
@@ -104,7 +116,6 @@ export default class Edit extends React.Component {
                         col
                       </span>
                     </Select.Option>
-                    {/* {console.log('value TagName', tagName)} */}
                   </Select>
                 </div>
               </div>
