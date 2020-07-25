@@ -166,7 +166,7 @@ class Recent extends React.Component {
                 Delete
               </span>
               <Modal
-                title="Modal"
+                title="Delete Project"
                 visible={visible}
                 onOk={() => this.handleDelete(projectID)}
                 onCancel={this.hideModal}

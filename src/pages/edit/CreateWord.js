@@ -19,15 +19,9 @@ export default class CreateWord extends Component {
       tag: props.tagName,
       words: [],
     }
-    // this.props = {
-    //   // chosenEntities: props.chosenEntities
-    //   noSurah: props.noSurah,
-    //   tagName: props.tagName,
-    // }
     this.noSurah = props.noSurah
     this.tagName = props.tagName
     this.word_key = -1
-    console.log(`chosenEntities CreateWord: ${this.chosenEntities}`)
   }
 
   componentDidUpdate(prevProps) {
@@ -118,16 +112,11 @@ export default class CreateWord extends Component {
       chosenEntities.forEach(e => {
         wordsToPrint[
           e.start
-        ].ARAB = `<font color=${e.tagColor}>(</font>${wordsToPrint[e.start].ARAB}`
-        // `<sup><i class="fa fa-times-circle-o" style="font-size: 16px;"></i></sup><font color=${e.tagColor}>(</font>${wordsToPrint[e.start].ARAB}`
+        ].ARAB = `<sup><i class="fa fa-times-circle-o" style="font-size: 14px; color:${e.tagColor};"></i></sup><font color=${e.tagColor}>(</font>${wordsToPrint[e.start].ARAB}`
         wordsToPrint[e.end].ARAB = `${wordsToPrint[e.end].ARAB}<font color=${e.tagColor}>)</font>`
       })
-    // chosenEntities.forEach((e, k) => {
-    // wordsToPrint[e.start].ARAB = `<font color=red>${k.toString().sup()}(</font>${
-    // }<font color=red>)${k.toString().sup()}</font>`
 
     if (showSuggestions)
-      // entitySuggestions.forEach((e, k) => {
       entitySuggestions.forEach(e => {
         if (
           chosenEntities.find(e2 => e2.start === e.start) &&
@@ -135,13 +124,15 @@ export default class CreateWord extends Component {
         )
           return
 
-        wordsToPrint[e.start].ARAB = `<font color=green>(</font>${wordsToPrint[e.start].ARAB}`
-        wordsToPrint[e.end].ARAB = `${wordsToPrint[e.end].ARAB}<font color=green>)</font>`
-        // wordsToPrint[e.start].ARAB = `<font color=green>${k.toString().sup()}(</font>${
-        // }<font color=green>)${k.toString().sup()}</font>`
+        wordsToPrint[
+          e.start
+        ].ARAB = `<sup><i class="fa fa-check-circle-o" style="font-size: 14px; color:green;"></i></sup><font color=green>(</font>${wordsToPrint[e.start].ARAB}`
+        wordsToPrint[
+          e.end
+        ].ARAB = `${wordsToPrint[e.end].ARAB}<font color=green>)</font><sup><i class="fa fa-times-circle-o" style="font-size: 14px; color:green;"></i></sup>`
       })
 
-    console.log('createWords : ', wordsToPrint)
+    // console.log('createWords : ', wordsToPrint)
 
     return wordsToPrint.map((word, k) => {
       word.INDEX = k
@@ -157,7 +148,6 @@ export default class CreateWord extends Component {
       <Word
         value={word.ARAB}
         color={word.COLOR}
-        // tagName={this.tagName}
         validateNewIndex={this.validateNewIndex}
         addWordToSelected={this.addWordToSelected}
         setMouseDownStatus={this.setMouseDownStatus}
@@ -227,9 +217,6 @@ export default class CreateWord extends Component {
     const { words, tag } = this.state
     const wordsCopy = words.slice()
 
-    // wordsCopy[index].COLOR = color
-    // console.log('wordsCopy[index].COLOR : ', wordsCopy[index].COLOR)
-    // console.log('this.tagName : ', tag)
     wordsCopy[index].COLOR = tagColor[tag]
 
     this.setState({
@@ -246,15 +233,11 @@ export default class CreateWord extends Component {
     const newChosenEntities = _.cloneDeep(chosenEntities)
 
     newChosenEntities.push({
-      // start: Math.min.apply(null, currentSelectedWords),
-      // end: Math.max.apply(null, currentSelectedWords) + 1,
       start: Math.min.apply(null, currentSelectedWords) - 1,
       end: Math.max.apply(null, currentSelectedWords),
       tagName,
       tagColor: tagColor[tagName],
     })
-
-    // console.log('newChosenEntities : ', newChosenEntities)
 
     this.setState(
       {
@@ -264,7 +247,7 @@ export default class CreateWord extends Component {
     )
 
     this.resetWords()
-    console.log(`chosenEntities CreateWord 2: ${this.chosenEntities}`)
+    // console.log(`chosenEntities CreateWord 2: ${this.chosenEntities}`)
   }
 
   saveChosenEntities = () => {
@@ -286,7 +269,20 @@ export default class CreateWord extends Component {
     })
   }
 
+  handleChangeButtonSuggest = () => {
+    const { showSuggestions } = this.props
+
+    if (showSuggestions) {
+      return ''
+    }
+    return 'none'
+  }
+
   render() {
+    const divStyle = {
+      display: this.handleChangeButtonSuggest(),
+    }
+
     return (
       <>
         <div
@@ -311,8 +307,14 @@ export default class CreateWord extends Component {
           >
             Annotate
           </Button>
-          <Button onClick={this.resetWords} tabIndex="-1" className="ml-2">
+          {/* <Button onClick={this.resetWords} tabIndex="-1" className="ml-2">
             Clear
+          </Button> */}
+
+          <Button className="mb-3 ml-3">Detele</Button>
+
+          <Button className="mb-3 ml-3" type="primary" style={divStyle}>
+            Annotate All Suggestion
           </Button>
         </div>
       </>

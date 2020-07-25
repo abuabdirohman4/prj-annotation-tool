@@ -123,7 +123,7 @@ export default class Edit extends React.Component {
                 projectID={$oid}
                 showSuggestions={checked}
                 chosenEntities={chosenEntities}
-                getSurah={checked ? 'get_suggest' : 'get_surah'}
+                // getSurah={checked ? 'get_suggest' : 'get_surah'}
                 noSurah={surahNumber}
                 tagName={tagName}
               />
