@@ -13,12 +13,9 @@ export default class Edit extends React.Component {
       tagName: 'Human',
     }
     this.word_key = -1
-    // console.log('Constructor')
-    // console.log(useParams)
   }
 
   componentDidMount() {
-    // console.log('componentDidMount')
     const {
       location: {
         state: { projectID } = {
@@ -28,7 +25,6 @@ export default class Edit extends React.Component {
     } = this.props
 
     if (projectID !== undefined)
-      // fetch(`http://localhost:5000/API/get_project?project_id=${projectID}`)
       fetch(`http://localhost:5000/API/get_project/${projectID}`)
         .then(res => res.json())
         .then(res => {
@@ -45,7 +41,6 @@ export default class Edit extends React.Component {
     this.setState({
       checked: !checked,
     })
-    // console.log(`ini handleCheckClick ${checked}`)
   }
 
   handleChange = tagName => {
@@ -68,9 +63,6 @@ export default class Edit extends React.Component {
       checked,
       tagName,
     } = this.state
-    // const { projectData } = this.state
-    // console.log(`oid: ${$oid}`)
-    // console.log(`chosenEntities index: ${chosenEntities}`)
 
     return (
       <div>

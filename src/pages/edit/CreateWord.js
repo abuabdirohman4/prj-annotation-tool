@@ -18,6 +18,9 @@ export default class CreateWord extends Component {
       isMouseDown: false,
       tag: props.tagName,
       words: [],
+      isDelete: true,
+      deleteEntities: '',
+      deleteText: 'Delete',
     }
     this.noSurah = props.noSurah
     this.tagName = props.tagName
@@ -100,9 +103,37 @@ export default class CreateWord extends Component {
     this.setState({ entitySuggestions })
   }
 
+  handleDeleteEntities = () => {
+    const { isDelete } = this.state
+    this.setState({
+      isDelete: !isDelete,
+    })
+    this.showDeleteEntities()
+  }
+
+  showDeleteEntities = () => {
+    const { isDelete } = this.state
+    if (isDelete) {
+      this.setState({
+        // deleteEntities: `<sup><i class="fa fa-times-circle-o" style="font-size: 14px; color:${tagColor[tagName]};"></i></sup>`
+        deleteEntities:
+          '<sup><i class="fa fa-times-circle" style="font-size: 14px; color:red;"></i></sup>',
+        deleteText: 'Cancel Delete',
+      })
+    } else {
+      this.setState({
+        deleteEntities: '',
+        deleteText: 'Delete',
+      })
+    }
+  }
+
   createWords = () => {
-    const { words, chosenEntities, entitySuggestions } = this.state
-    const { showSuggestions } = this.props
+    const { words, chosenEntities, entitySuggestions, deleteEntities } = this.state
+    // const { words, chosenEntities, entitySuggestions } = this.state
+    const { showSuggestions, tagName } = this.props
+    // const delete = '<sup><i class="fa fa-times-circle-o" style="font-size: 14px; color:${e.tagColor};"></i></sup>'
+    // const select = '<sup><i class="fa fa-check-circle-o" style="font-size: 14px; color:green;"></i></sup>'
 
     if (words.length === 0) return ''
 
@@ -110,9 +141,14 @@ export default class CreateWord extends Component {
 
     if (chosenEntities !== '')
       chosenEntities.forEach(e => {
+        // wordsToPrint[
+        //   e.start
+        // ].ARAB = `<sup><i class="fa fa-times-circle-o" style="font-size: 14px; color:${e.tagColor};"></i></sup><font color=${e.tagColor}>(</font>${wordsToPrint[e.start].ARAB}`
         wordsToPrint[
           e.start
-        ].ARAB = `<sup><i class="fa fa-times-circle-o" style="font-size: 14px; color:${e.tagColor};"></i></sup><font color=${e.tagColor}>(</font>${wordsToPrint[e.start].ARAB}`
+        ].ARAB = `${deleteEntities}<font color=${e.tagColor}>(</font>${wordsToPrint[e.start].ARAB}`
+        // `<span class='supsub'><sup class='superscript'>Sup</sup><sub class='subscript'>Sub</sub></span><font color=${e.tagColor}>(</font>${wordsToPrint[e.start].ARAB}`
+
         wordsToPrint[e.end].ARAB = `${wordsToPrint[e.end].ARAB}<font color=${e.tagColor}>)</font>`
       })
 
@@ -124,15 +160,15 @@ export default class CreateWord extends Component {
         )
           return
 
-        wordsToPrint[
-          e.start
-        ].ARAB = `<sup><i class="fa fa-check-circle-o" style="font-size: 14px; color:green;"></i></sup><font color=green>(</font>${wordsToPrint[e.start].ARAB}`
-        wordsToPrint[
-          e.end
-        ].ARAB = `${wordsToPrint[e.end].ARAB}<font color=green>)</font><sup><i class="fa fa-times-circle-o" style="font-size: 14px; color:green;"></i></sup>`
-      })
+        console.log('${tagColor[tagName]} :', tagColor[tagName])
+        wordsToPrint[e.start].ARAB =
+          // `<sup><i class="fa fa-check-circle-o" style="font-size: 14px; color:green;"></i></sup><font color=${tagColor[tagName]}>(</font>${wordsToPrint[e.start].ARAB}`
+          `<sup><i class="fa fa-plus-circle" style="font-size: 14px; color:green; position: relative; top:-4px; left:-12px"></i></sup><sub><i class="fa fa-times-circle" style="font-size: 14px; color:red;"></i></sub><font color=${tagColor[tagName]}>(</font>${wordsToPrint[e.start].ARAB}`
 
-    // console.log('createWords : ', wordsToPrint)
+        wordsToPrint[e.end].ARAB =
+          // `${wordsToPrint[e.end].ARAB}<font color=${tagColor[tagName]}>)</font><sup><i class="fa fa-times-circle-o" style="font-size: 14px; color:green;"></i></sup>`
+          `${wordsToPrint[e.end].ARAB}<font color=${tagColor[tagName]}>)</font>`
+      })
 
     return wordsToPrint.map((word, k) => {
       word.INDEX = k
@@ -187,8 +223,6 @@ export default class CreateWord extends Component {
   }
 
   setMouseDownStatus = status => {
-    // console.log('setMouseDownStatus called')
-
     this.setState({
       isMouseDown: status,
     })
@@ -197,15 +231,12 @@ export default class CreateWord extends Component {
   }
 
   resetWords = () => {
-    // const { words, entitySuggestions } = this.state
     const { words } = this.state
     const wordsCopy = words.slice()
 
     wordsCopy.forEach(word => {
       word.COLOR = ''
     })
-
-    // console.log('entity Suggestion', entitySuggestions)
 
     this.setState({
       words: wordsCopy,
@@ -247,7 +278,6 @@ export default class CreateWord extends Component {
     )
 
     this.resetWords()
-    // console.log(`chosenEntities CreateWord 2: ${this.chosenEntities}`)
   }
 
   saveChosenEntities = () => {
@@ -282,6 +312,7 @@ export default class CreateWord extends Component {
     const divStyle = {
       display: this.handleChangeButtonSuggest(),
     }
+    const { deleteText } = this.state
 
     return (
       <>
@@ -298,6 +329,10 @@ export default class CreateWord extends Component {
           {this.createWords()}
         </div>
         <div className="text-center">
+          <Button className="mb-3 ml-3" type="primary" style={divStyle}>
+            Annotate All Suggestion
+          </Button>
+
           <Button
             onClick={this.annotate}
             onKeyDown={this.annotate}
@@ -307,14 +342,9 @@ export default class CreateWord extends Component {
           >
             Annotate
           </Button>
-          {/* <Button onClick={this.resetWords} tabIndex="-1" className="ml-2">
-            Clear
-          </Button> */}
 
-          <Button className="mb-3 ml-3">Detele</Button>
-
-          <Button className="mb-3 ml-3" type="primary" style={divStyle}>
-            Annotate All Suggestion
+          <Button className="mb-3 ml-3" onClick={this.handleDeleteEntities}>
+            {deleteText}
           </Button>
         </div>
       </>
