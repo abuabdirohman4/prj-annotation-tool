@@ -1,6 +1,6 @@
 # Alat Bantu Anotasi Entitas Manusia Al Qur'an
 
-Aplikasi untuk membantu para peniliti Al Qur'an untuk menganotasi entitas-entitas yang ada di dalam Al Qur'an, khususnya entitas manusia.
+Aplikasi untuk membantu para peneliti Al Qur'an untuk menganotasi entitas-entitas yang ada di dalam Al Qur'an, khususnya entitas manusia.
 
 ## Getting Started
 
