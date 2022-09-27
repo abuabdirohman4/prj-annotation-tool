@@ -8,10 +8,10 @@ Instruksi ini akan mambantu anda untuk mendapatkan salinan aplikasi dan menjalan
 
 ### Prerequisites
 
-1. Install node.js terbaru: https://nodejs.org
+1. Install node.js version 12 : https://nodejs.org (recommende use nvm)
 2. Install yarn package manager terbaru: https://yarnpkg.com/
-3. Install python terbaru: https://python.org/
-4. Install mongoDB: https://www.mongodb.com/try/download/community
+3. Install python version 3.8.10: https://python.org/ (recommende use pyenv)
+4. Install mongoDB version 14: https://www.mongodb.com/try/download/community 
 
 ### Installing
 
